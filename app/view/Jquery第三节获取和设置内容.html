@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery获取和设置内容</title>
+        <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <script type="application/javascript" src="../javaScripts/bootstrapJs/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                alert("p标记的文本是："+$("#test").text());
+            });
+            $("#btn2").click(function () {
+                alert("p标记的html是："+$("#test").html());
+            });
+            $("#btn3").click(function () {
+                alert("这个按钮的value值："+$(this).val());
+            });
+            $("#btn4").click(function () {
+                alert("a标记的href："+$('a').attr("href"));
+            });
+            //设置内容
+            $("#btn5").click(function () {
+                $("#test1").text(function (i,oldText) {
+                    return "旧文本："+oldText+"新文本：Hello Text"+"index:"+i;
+                })
+            });
+            $("#btn6").click(function () {
+                $("#test1").html(function (i,oldHtml) {
+                    return "旧html："+oldHtml+"新html：Hello <b>word</b>"+"index:"+i;
+                })
+            });
+            $("#btn7").click(function () {
+                $(this).val(function (i,oldValue) {
+                    return "旧Value："+oldValue;
+                })
+            });
+            $("#btn8").click(function () {
+                $("#a1").attr({
+                    "href":'https://cn.hao123.com/',
+                    "title":'好123'
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+    <h3>获取值</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <p id="test">这是段落中的 <b>粗体</b> 文本。</p>
+        </div>
+        <div class="col-md-6">
+            <a href="wwww.baidu.com" target="_blank" id="a1">跳转百度</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <input type="button" value="显示文本text" class="btn btn-default" id="btn1">
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="显示html" class="btn btn-default" id="btn2">
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="显示值val" class="btn btn-default" id="btn3">
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="att应用" class="btn btn-default" id="btn4">
+        </div>
+    </div>
+    <h3>设置值</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <p id="test1">这是段落中的 <b>粗体</b> 文本。</p>
+        </div>
+        <div class="col-md-6">
+            <a href="wwww.baidu.com" target="_blank"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <input type="button" value="设置文本text" class="btn btn-default" id="btn5">
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="设置html" class="btn btn-default" id="btn6">
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="设置值val" class="btn btn-default" id="btn7">
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="attr设置应用设置了多个值" class="btn btn-default" id="btn8">
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap菜鸟教程-网格系统</title>
+    <!--<link rel="stylesheet" href="../css/bootstrapCss/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <script type="application/javascript" src="../javaScripts/bootstrapJs/bootstrap.min.js"></script>
+    <style>
+        div{ background-color: #868e96; border:1px solid red;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4">123</div>
+        <div class="col-4">456</div>
+        <div class="col-4">789</div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-6">">992"中等屏幕用 电脑显示器md-8样式</div>
+        <div class="col-md-4 col-sm-6">"<992 >768"小屏幕用“平板”sm 小屏幕的样式</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">xs代表超小屏幕（手机）《768</div>
+        <div class="col-xs-6 col-sm-3">456</div>
+        <div class="col-xs-6 col-sm-3">789</div>
+        <div class="col-xs-6 col-sm-3">789</div>
+    </div>
+    <div class="row" >
+        <div class="col-xs-6 col-md-offset-6">
+            <p>前面偏移了6列
+            </p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-2">第一列</div>
+        <div class="col-md-10">
+            <h1>第二列</h1>
+            <div class="row">
+                <div class="col-md-6">嵌套列</div>
+                <div class="col-md-6">嵌套列</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p>拍序列的理解：push 推过去 pull 拉过来</p>
+        <div class="col-md-4">左侧边栏</div>
+        <div class="col-md-8">右内容区</div>
+        <p>排序后</p>
+        <div class="col-md-4 col-md-push-8">左侧边栏</div>
+        <div class="col-md-8 col-md-pull-4">右内容区</div>
+    </div>
+</div>
+</body>
+</html>
