@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*function testdiv(){
+            console.log(event.target.nodeName);
+        }
+        function testa(event){
+            console.log(event.target.nodeName);
+        }
+        function testbody(){
+            console.log(event.target.nodeName);
+        }*/
+
+
+    </script>
+</head>
+
+<body>
+<div id="testdiv">
+    <a href="#" id="testa">click me</a>
+</div>
+<script>
+    window.onload=function () {
+        document.getElementById("testa").onclick = function (event) {
+            console.log(event.target.nodeName);
+        }
+    }
+
+</script>
+</body>
+</html>
+
+
+
