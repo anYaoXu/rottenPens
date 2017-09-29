@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="149e9819-c1b9-4ef3-a4f2-334f4033c71a" name="Default" comment="试一下">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/第十一节boostrap导航栏.html" afterPath="$PROJECT_DIR$/app/view/第十一节boostrap导航栏.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/第十二节boostrap分页.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,14 +94,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="第十一节boostrap导航栏.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="第十一节boostrap导航栏.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/第十一节boostrap导航栏.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="21" />
+            <state relative-caret-position="133">
+              <caret line="7" column="101" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="101" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="第十二节boostrap分页.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/第十二节boostrap分页.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="101" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="101" />
+              <folding>
+                <element signature="e#551#558#1" expanded="true" />
+                <element signature="e#728#735#1" expanded="true" />
+                <element signature="e#980#986#0" expanded="true" />
+                <element signature="e#1050#1056#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="第十三节boostrap超大屏幕.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="第十三节boostrap超大屏幕2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,6 +169,9 @@
         <option value="$PROJECT_DIR$/app/view/ss.html" />
         <option value="$PROJECT_DIR$/app/view/第十节boostrap导航元素.html" />
         <option value="$PROJECT_DIR$/app/view/第十一节boostrap导航栏.html" />
+        <option value="$PROJECT_DIR$/app/view/第十二节boostrap分页.html" />
+        <option value="$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕2.html" />
+        <option value="$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕.html" />
       </list>
     </option>
   </component>
@@ -201,12 +242,12 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\HappyProject\rottenPens\app\javaScripts\bootstrapJs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\HappyProject\rottenPens\app\view" />
       <recent name="E:\rottenPens" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\HappyProject\rottenPens\app\javaScripts\bootstrapJs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -297,7 +338,7 @@
       <workItem from="1506593877177" duration="747000" />
       <workItem from="1506594741055" duration="340000" />
       <workItem from="1506647905153" duration="807000" />
-      <workItem from="1506666712758" duration="6584000" />
+      <workItem from="1506666712758" duration="9654000" />
     </task>
     <task id="LOCAL-00001" summary="试一下">
       <created>1506400905607</created>
@@ -331,7 +372,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41161000" />
+    <option name="totallyTimeSpent" value="44231000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -380,39 +421,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/view/第九节boostrap输入框组.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/第八节bootstrap下拉菜单And按钮组.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="122" column="58" lean-forward="true" selection-start-line="122" selection-start-column="58" selection-end-line="122" selection-end-column="58" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/ss.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/JqueryDom元素方法.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -731,11 +739,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/第十一节boostrap导航栏.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="21" />
+        <state relative-caret-position="133">
+          <caret line="7" column="101" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="101" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/第十二节boostrap分页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="101" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="101" />
+          <folding>
+            <element signature="e#551#558#1" expanded="true" />
+            <element signature="e#728#735#1" expanded="true" />
+            <element signature="e#980#986#0" expanded="true" />
+            <element signature="e#1050#1056#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/第十三节boostrap超大屏幕.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
