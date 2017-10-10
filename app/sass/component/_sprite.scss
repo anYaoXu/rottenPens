@@ -1,6 +1,5 @@
-//图片精灵
-@import "compass/utilities/sprites";   //引入精灵图片控件
-@import "icon/*.png";    //指定图片位置 Icon文件夹位于images文件夹内并包含所有精灵图片;
+@import "compass/utilities/sprites";  //yinru jinglingtupian kongjian
+@import "icon/*.png";
 .sprite-base{
   display:inline-block;
   vertical-align: middle;
