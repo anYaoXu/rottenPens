@@ -1,0 +1,11 @@
+//图片精灵
+@import "compass/utilities/sprites";
+@import "icon/*.png";
+.sprite-base{
+  display:inline-block;
+  vertical-align: middle;
+  &:focus{
+    outline:none;
+  }
+}
+@include all-icon-sprites;
