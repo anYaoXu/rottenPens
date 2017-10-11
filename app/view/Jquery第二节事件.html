@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery事件</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <script type="application/javascript" src="../javaScripts/bootstrapJs/bootstrap.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#clickP").click(function () {
+                $(this).hide();
+            });
+            $("h3").dblclick(function () {
+                $(this).hide();
+            });
+            $("#p1").mouseenter(function () {
+                alert("鼠标指针穿过了元素");
+            });
+            $("#p2").mouseleave(function () {
+                alert("鼠标指针离开了元素");
+            });
+            $("#p3").mousedown(function () {
+                alert("鼠标在元素上并且按下");
+            });
+            $("#p4").mouseup(function () {
+                alert("鼠标在元素上并且抬起鼠标");
+            });
+            $("#p5").hover(function () {
+                alert("鼠标在元素上");
+            },function () {
+               alert("鼠标离开了元素");
+            });
+            $("#input1").focus(function () {
+                $(this).val("已经自动为你填充内容");
+            });
+            $("#input1").blur(function () {
+                $(this).val("");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <p id="clickP">click事件： 点击我隐藏</p>
+            <h3>dbclick事件：点击我隐藏</h3>
+            <p id="p1">mouseenter事件：当鼠标指针穿过元素时</p>
+            <p id="p2">mouseleave事件：当鼠标指针离开元素时</p>
+            <p id="p3">mousedown事件：当鼠标在元素上并且按下时</p>
+            <p id="p4">mouseup事件：当鼠标在元素上并且抬起时</p>
+            <p id="p5">hover事件：当鼠标经过元素时</p>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <input type="text" id="input1" class="form-control" placeholder="当获得焦点和失去焦点时触发方法">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

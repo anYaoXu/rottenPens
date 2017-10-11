@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom元素方法</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <script type="application/javascript" src="../javaScripts/bootstrapJs/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $("#get").click(function (e) {
+                alert($("p").get(0).innerText());
+            });
+            //点击第几个div
+            $("p").click(function(){
+                alert($(this).index());
+            });
+            //1.8 以上版本废弃了 size（）  改用length
+            $("#size").click(function () {
+                alert($("p").length);
+            });
+            $("#target").click(function (event) {
+                alert(this.value);
+                alert(event.target.value);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div>请点击下面的段dsf落</div>
+            <p>第一个段落</p>
+            <p>第二个段落</p>
+            <p>第三个段落</p>
+            <p>第四个段落</p>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <input type="button" value="get方法应用get(0)" id="get">
+            </div>
+            <div class="col-md-2">
+                <input type="button" value="size方法应用size()" id="size">
+            </div>
+            <div class="col-md-2">
+                <input type="button" value="event.target返回事件的目标节点" id="target">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

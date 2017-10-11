@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>boostrap输入框组</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <script type="application/javascript" src="../javaScripts/bootstrapJs/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3>基本输入框组</h3>
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="xxxx">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="xxxx">
+            <span class="input-group-addon">@</span>
+        </div>
+        <h3>复选框和单选和按钮框插件</h3>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" >
+            </span>
+            <input type="text" class="form-control">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="radio">
+            </span>
+            <input type="text" class="form-control">
+        </div>
+        <div class="input-group">
+            <div class="input-group-btn">
+                <input type="button" value="GO" class="btn btn-default">
+            </div>
+            <input type="text" class="form-control" placeholder="xxxx">
+        </div>
+        <h3>带有下拉菜单的按钮</h3>
+        <div class="input-group">
+            <div class="input-group-btn">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">选择
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a>sdfsdf</a></li>
+                    <li><a>sdfsdf</a></li>
+                    <li><a>sdfsdf</a></li>
+                    <li><a>sdfsdf</a></li>
+                </ul>
+            </div>
+            <input type="text" class="form-control" placeholder="sss">
+        </div>
+        <h3>带分割线的下拉菜单</h3>
+        <div class="input-group">
+            <div class="input-group-btn">
+                <button class="btn btn-default">下拉菜单</button>
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <!--<span class="sr-only">切换下拉菜单</span>-->
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a>sdfsdf</a></li>
+                    <li><a>sdfsdf</a></li>
+                    <li><a>sdfsdf</a></li>
+                    <li><a>sdfsdf</a></li>
+                </ul>
+            </div>
+            <input type="text" class="form-control" placeholder="sss">
+        </div>
+    </div>
+</body>
+</html>
