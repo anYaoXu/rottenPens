@@ -1,4 +1,4 @@
-.icon-sprite, .icon-b-meetingData, .icon-b-meetingSurvey, .icon-b-people, .icon-b-setting, .icon-b-task, .icon-icon-dataDownload-doc-sm, .icon-icon-dataDownload-exl-sm, .icon-icon-dataDownload-pdf-sm, .icon-icon-field-checkbox, .icon-icons-operation, .icon-role-edit-all, .icon-s-fail, .icon-s-success, .icon-s-tip, .icon-s-tip2 { background-image: url('../images/icon-s0db76c5667.png'); background-repeat: no-repeat; }
+.icon-sprite, .icon-b-meetingData, .icon-b-meetingSurvey, .icon-b-people, .icon-b-setting, .icon-b-task, .icon-icon-dataDownload-doc-sm, .icon-icon-dataDownload-exl-sm, .icon-icon-dataDownload-pdf-sm, .icon-icon-field-checkbox, .icon-icons-operation, .icon-o-moudle, .icon-role-edit-all, .icon-role-edit-cancel, .icon-s-fail, .icon-s-success, .icon-s-tip, .icon-s-tip2 { background-image: url('../images/icon-s2e713b739a.png'); background-repeat: no-repeat; }
 
 .sprite-base { display: inline-block; vertical-align: middle; width: 20px; height: 20px; }
 .sprite-base:focus { outline: none; }
@@ -23,15 +23,19 @@
 
 .icon-icons-operation { background-position: 0 -268px; }
 
-.icon-role-edit-all { background-position: 0 -310px; }
-.icon-role-edit-all:hover, .icon-role-edit-all.role-edit-all-hover { background-position: 0 -283px; }
+.icon-o-moudle { background-position: 0 -303px; }
+.icon-o-moudle:hover, .icon-o-moudle.o-moudle-hover { background-position: 0 -283px; }
 
-.icon-s-fail { background-position: 0 -337px; }
+.icon-role-edit-all { background-position: 0 -350px; }
+.icon-role-edit-all:hover, .icon-role-edit-all.role-edit-all-hover { background-position: 0 -323px; }
 
-.icon-s-success { background-position: 0 -369px; }
+.icon-role-edit-cancel { background-position: 0 -404px; }
+.icon-role-edit-cancel:hover, .icon-role-edit-cancel.role-edit-cancel-hover { background-position: 0 -377px; }
 
-.icon-s-tip { background-position: 0 -401px; }
+.icon-s-fail { background-position: 0 -431px; }
 
-.icon-s-tip2 { background-position: 0 -433px; }
+.icon-s-success { background-position: 0 -463px; }
 
-* { margin: 0; }
+.icon-s-tip { background-position: 0 -495px; }
+
+.icon-s-tip2 { background-position: 0 -527px; }
