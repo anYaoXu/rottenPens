@@ -1,2 +1,4 @@
-.idea
-.sass-cache
+.idea/
+/app/.sass-cache/
+release/
+/app/sass/
