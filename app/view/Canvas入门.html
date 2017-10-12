@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas入门</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #warp {
+            width: 500px;
+            height: 500px;
+        }
+
+        #canvas1,#canvas2 {
+            border: 1px solid black;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var canvas1 = document.getElementById("canvas1");
+            if (canvas1.getContext) {
+                var ctx = canvas1.getContext("2d");
+                //绘制一个矩形
+                ctx.fillStyle = "red";
+                ctx.fillRect(10, 10, 50, 50);
+                //从绘制的矩形中 擦除一个矩形出来
+                ctx.clearRect(20, 20, 25, 25);
+                //绘制一个矩形
+                ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+                ctx.fillRect(25, 25, 50, 50);
+                //绘制一个矩形边框   宽度是5  颜色是绿色
+                ctx.lineWidth = 5;
+                ctx.strokeStyle = "green";
+                ctx.strokeRect(40, 40, 50, 50);
+            } else {
+                alert("当前浏览器不支持canvas");
+            }
+            var canvas2 = document.getElementById("canvas2");
+            if (canvas2.getContext) {
+                var ctx2 = canvas2.getContext("2d");
+                ctx2.beginPath();
+                ctx2.moveTo(20, 50);
+                ctx2.lineTo(40, 30);
+                ctx2.lineTo(40, 70);
+                ctx2.fill();
+            } else {
+                alert("当前浏览器不支持canvas");
+            }
+        };
+
+    </script>
+</head>
+<body>
+<div id="warp">
+    <canvas id="canvas1" width="150" height="150"></canvas>
+    <canvas id="canvas2" width="150" height="150"></canvas>
+</div>
+</body>
+</html>
