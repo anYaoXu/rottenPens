@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas八卦图</title>
+    <script>
+        window.onload=function () {
+            var canvas1 = document.getElementById("canvas1");
+            var ctx1 = canvas1.getContext("2d");
+            // 大的白 半圆  角度从1.5 -  0.5  顺时针
+            ctx1.beginPath();
+            ctx1.arc(200,200,80,1.5*Math.PI,Math.PI/2,false);
+            ctx1.fillStyle="white";
+            ctx1.closePath();
+            ctx1.fill();
+
+            //大的黑色半圆
+            ctx1.beginPath();
+            ctx1.arc(200,200,80,1.5*Math.PI,Math.PI/2,true);
+            ctx1.fillStyle="black";
+            ctx1.closePath();
+            ctx1.fill();
+
+            //大圆的上半部分画一个白色的小圆
+            ctx1.beginPath();
+            ctx1.arc(200,160,40,0,2*Math.PI);
+            ctx1.fillStyle = "white";
+            ctx1.closePath();
+            ctx1.fill();
+
+            //大圆的下半部分画一个黑色的小圆
+            ctx1.beginPath();
+            ctx1.arc(200,240,40,0,2*Math.PI);
+            ctx1.fillStyle = "black";
+            ctx1.closePath();
+            ctx1.fill();
+
+            //大圆上半部分的小黑圆
+            ctx1.beginPath();
+            ctx1.arc(200,160,5,0,2*Math.PI);
+            ctx1.fillStyle = "black";
+            ctx1.closePath();
+            ctx1.fill();
+
+            //大圆下半部分的小白圆
+            ctx1.beginPath();
+            ctx1.arc(200,240,5,0,2*Math.PI);
+            ctx1.fillStyle = "white";
+            ctx1.closePath();
+            ctx1.fill();
+        }
+
+    </script>
+</head>
+<body>
+    <canvas id="canvas1" width="400" height="400" style="border:1px solid; background:#E1E1FF;"></canvas>
+</body>
+</html>
