@@ -112,6 +112,22 @@
                 ctx5.arc(180,110,20,0,2*Math.PI);
                 ctx5.stroke();
             }
+            /**
+             * 二次贝塞尔曲线使用
+             * */
+            var canvas7 = document.getElementById("canvas7");
+            if(canvas7.getContext){
+                var ctx7 = canvas7.getContext("2d");
+                ctx7.beginPath();
+                ctx7.moveTo(75,25);
+                ctx7.quadraticCurveTo(25,25,25,62.5);
+                ctx7.quadraticCurveTo(25,100,50,100);
+                ctx7.quadraticCurveTo(50,120,30,125);
+                ctx7.quadraticCurveTo(60,120,65,100);
+                ctx7.quadraticCurveTo(125,100,125,62.5);
+                ctx7.quadraticCurveTo(125,25,75,25);
+                ctx7.stroke();
+            }
         };
 
     </script>
@@ -124,6 +140,7 @@
     <canvas id="canvas4" width="300" height="300"></canvas>
     <canvas id="canvas5" width="300" height="300"></canvas>
     <canvas id="canvas6" width="300" height="300"></canvas>
+    <canvas id="canvas7" width="300" height="300"></canvas>
 </div>
 </body>
 </html>
