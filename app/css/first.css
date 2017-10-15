@@ -1,14 +1,41 @@
-.icon-sprite, .icon-s-fail, .icon-s-success, .icon-s-tip, .icon-s-tip2 { background-image: url('../images/icon-s224a849831.png'); background-repeat: no-repeat; }
+.icon-sprite, .icon-b-meetingData, .icon-b-meetingSurvey, .icon-b-people, .icon-b-setting, .icon-b-task, .icon-icon-dataDownload-doc-sm, .icon-icon-dataDownload-exl-sm, .icon-icon-dataDownload-pdf-sm, .icon-icon-field-checkbox, .icon-icons-operation, .icon-o-moudle, .icon-role-edit-all, .icon-role-edit-cancel, .icon-s-fail, .icon-s-success, .icon-s-tip, .icon-s-tip2 { background-image: url('../images/icon-s2e713b739a.png'); background-repeat: no-repeat; }
 
-.sprite-base { display: inline-block; vertical-align: middle; }
+.sprite-base { display: inline-block; vertical-align: middle; width: 20px; height: 20px; }
 .sprite-base:focus { outline: none; }
 
-.icon-s-fail { background-position: 0 0; }
+.icon-b-meetingData { background-position: 0 0; }
 
-.icon-s-success { background-position: 0 -32px; }
+.icon-b-meetingSurvey { background-position: 0 -40px; }
 
-.icon-s-tip { background-position: 0 -64px; }
+.icon-b-people { background-position: 0 -80px; }
 
-.icon-s-tip2 { background-position: 0 -96px; }
+.icon-b-setting { background-position: 0 -120px; }
 
-* { margin: 0; }
+.icon-b-task { background-position: 0 -160px; }
+
+.icon-icon-dataDownload-doc-sm { background-position: 0 -200px; }
+
+.icon-icon-dataDownload-exl-sm { background-position: 0 -216px; }
+
+.icon-icon-dataDownload-pdf-sm { background-position: 0 -232px; }
+
+.icon-icon-field-checkbox { background-position: 0 -248px; }
+
+.icon-icons-operation { background-position: 0 -268px; }
+
+.icon-o-moudle { background-position: 0 -303px; }
+.icon-o-moudle:hover, .icon-o-moudle.o-moudle-hover { background-position: 0 -283px; }
+
+.icon-role-edit-all { background-position: 0 -350px; }
+.icon-role-edit-all:hover, .icon-role-edit-all.role-edit-all-hover { background-position: 0 -323px; }
+
+.icon-role-edit-cancel { background-position: 0 -404px; }
+.icon-role-edit-cancel:hover, .icon-role-edit-cancel.role-edit-cancel-hover { background-position: 0 -377px; }
+
+.icon-s-fail { background-position: 0 -431px; }
+
+.icon-s-success { background-position: 0 -463px; }
+
+.icon-s-tip { background-position: 0 -495px; }
+
+.icon-s-tip2 { background-position: 0 -527px; }
