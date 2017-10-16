@@ -1,0 +1,22 @@
+{
+  "name": "rottenpens",
+  "version": "1.0.0",
+  "description": "this is my frist gruntFile",
+  "main": "index.js",
+  "scripts": {
+    "test": "xyr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anYaoXu/rottenPens.git"
+  },
+  "keywords": [
+    "rootenpens"
+  ],
+  "author": "anyaoXu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anYaoXu/rottenPens/issues"
+  },
+  "homepage": "https://github.com/anYaoXu/rottenPens#readme"
+}

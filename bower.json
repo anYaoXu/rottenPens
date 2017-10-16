@@ -1,0 +1,25 @@
+{
+  "name": "rottenpens",
+  "description": "this is my frist gruntFile",
+  "main": "index.js",
+  "authors": [
+    "anyaoXu"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "rootenpens"
+  ],
+  "homepage": "https://github.com/anYaoXu/rottenPens",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
