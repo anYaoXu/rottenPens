@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition属性</title>
+    <style>
+        #div1{ width: 100px;
+            height: 100px;
+            background-color: #1e7e34;
+            transition-property: width;
+            transition-duration: 2s;
+        }
+        #div1:hover{
+            width: 300px;
+        }
+
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition-property: all;
+            transition-duration: 3s;
+        }
+        #div2:hover{
+            width:300px;
+            height: 300px;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background-color: #00b3ee;
+            transition:all 0.8s;
+        }
+        #div3:hover{
+            transform: scale(1.5);
+        }
+    </style> 
+</head>
+<body>
+    <div id="div1"></div>
+
+    <p></p>
+
+    <div id="div2"></div>
+<p></p>
+<div id="div3"></div>
+</body>
+</html>
