@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机取json中的几条数据</title>
+    <script>
+        var myJson = [
+            {
+                name: 'xyr',
+                age: '18'
+            },
+            {
+                name: 'xyr1',
+                age: '18'
+            },
+            {
+                name: 'xyr2',
+                age: '18'
+            },
+            {
+                name: 'xyr3',
+                age: '18'
+            }
+        ];
+        function getRandomArrayElements(arr, count) {
+            /**
+             * split 逗号分隔数组
+             * splice 插入 删除  替换数组
+             * slice  截取数组
+             * */
+            var shuffled = arr.slice(0); // 从下标0 开始截取数组
+            var i = arr.length;   //4
+            var min = i - count;  //4-1=3
+            var temp;
+            var index;
+            while (i-- > min) {
+                //先比较 在进行减一  第一次时 i 已经等于3
+                //随机产生的介于0-1之间的数
+                //i 是越来越小的 第一次产生的数字不会大于5  第二次产生的数字不会大于4
+                //i 是逐级递减的  index 和  i 位置的数字进行交换
+                index = Math.floor((i + 1) * Math.random());
+                temp = shuffled[index];
+                shuffled[index] = shuffled[i];
+                shuffled[i] = temp;
+            }
+            //从min 位置开始截取 数组
+            return shuffled.slice(min);
+        }
+        var items = ['1', '2', '4', '5', '6', '7', '8', '9', '10'];
+        console.log(getRandomArrayElements(myJson, 1));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
