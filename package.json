@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/anYaoXu/rottenPens/issues"
   },
-  "homepage": "https://github.com/anYaoXu/rottenPens#readme"
+  "homepage": "https://github.com/anYaoXu/rottenPens#readme",
+  "dependencies": {
+    "boostrap": "^2.0.0"
+  }
 }
