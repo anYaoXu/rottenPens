@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas 入门</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+        #div1{
+            width: 100%; height: auto; border:1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        canvas 不设置宽高时，会初始化300 * 150 的画布。<br>
+        改元素可以使用css来定义大小，但在绘制时 图像会伸缩以适应它的框架尺寸；如果css的尺寸与初始画布的比例不一样，会出现扭曲。<br>
+        注意：如果你绘制出来的图像是扭曲的，尝试在 canvas 的属性中明确规定宽度和高度，而不是使用css。<br>
+        <b>渲染上下文</b><br>
+        canvas 元素创造了一个固定大小的画布，它公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容。<br>
+        渲染方式 有2D 和 3D , 我们将注意力放在 2D 上面. <br>
+        canvas 起初是空白的。为了展示，首先脚本需要找到渲染上下文，然后在它的上面绘制。<br>
+        canvas 元素有一个叫做 getcontext  的方法 ，这个方法是用来获得渲染上下文和他的会话功能。<br>
+        getContext() 只有一个参数，上下文格式。对于2D 而言， 可以使用 CanvasRenderingContext2D.  getContext('2d')<br><br>
+
+        <b>栅格</b><br>
+        在我们开始画图之前，我们需要了解一下画布栅格 以及 坐标空间。<br>
+        上一页和html 模板中有个宽150px，高150px canvas 元素。<br>
+        canvas 元素默认被网格所覆盖。通常说网格中的一个单元相当于canvas元素中的一像素。<br>
+
+        <b>绘制矩形</b><br>
+        不同于svg ，html 中的元素canvas 只支持一种原生的图形绘制：矩形。<br>
+        所有其他的图形的绘制都至少需要生成一条路径。不过我们有众多路径生成方法让复杂的图形的绘制成为了可能。<br>
+        首先，我们回到矩形的绘制中，canvas提供了三种方法绘制矩形：<br>
+        fillRect (x,y,width,height)    //绘制一个填充的矩形  <br>
+        strokeRect (x,y,width,height)  //绘制一个矩形边框<br>
+        clearRect(x,y,width,height)    //清除指定矩形区域，让清除部分完全透明。<br>
+
+        <b>绘制路径</b><br>
+        1.首选 ，你需要创建路径起始点。<br>
+        2.然后你使用画图命令去画出路径。<br>
+        3.之后你把路径封闭<br>
+        4.一旦路径生成，你就能通过描边活填充路径区域来渲染图形。<br>
+        以下是所需要用到的函数：<br>
+        beginPath（）   新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。<br>
+        closePath（）   闭合路径之后户型绘制命令又重新指向到上下文中。<br>
+        stroke（）      通过线条来绘制图形轮廓。<br>
+        fill            通过填充路径内容区域生成实心的图形。<br>
+        生成路径的第一步叫做 beginPath（）。本质上，路径是由很多子路径构成，这些子路径都是在一个列表中，<br>
+        所有的子路径 构成图形。而每次这个方法调用之后，列表清空重置，然后我们就可以重新绘制新的图形。<br>
+        https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors<br>
+    </div>
+</body>
+</html>
