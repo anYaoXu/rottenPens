@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>草坪价格</title>
+    <style type="text/css">
+        body{margin:0;padding:0;font:12px/1.5 Tahoma,Helvetica,Arial,sans-serif;}
+        ul,li,{margin:0;padding:0;}
+        ul{list-style:none;}
+        a{text-decoration: none;}
+        #root{margin:10px;width:200px;overflow:hidden;}
+        #root li{line-height:25px;}
+        #root .rem{padding-left:16px;}
+        #root .add{background:url(/uploads/allimg/1209/treeico.gif) -4px -31px no-repeat;}
+        #root .ren{background:url(/uploads/allimg/1209/treeico.gif) -4px -7px no-repeat;}
+        #root li a{color:#666666;padding-left:5px;outline:none;blr:expression(this.onFocus=this.blur());}
+        #root .two{padding-left:20px;display:none;}
+    </style>
+</head>
+<body>
+<ul id="root">
+    <li>
+        <label><a href="javascript:;">校讯通</a></label>
+        <ul class="two">
+            <li>
+                <label><a href="javascript:;">沈阳市</a></label>
+                <ul class="two">
+                    <li>
+                        <label><a href="javascript:;">二小</a></label>
+                        <ul class="two">
+                            <li><label><a href="javascript:;">二年级</a></label></li>
+                            <li>
+                                <label><a href="javascript:;">三年级</a></label>
+                                <ul class="two">
+                                    <li>
+                                        <label><a href="javascript:;">一班</a></label>
+                                        <ul class="two">
+                                            <li><label><a href="javascript:;">张三</a></label></li>
+                                            <li>
+                                                <label><a href="javascript:;">王五</a></label>
+                                                <ul class="two">
+                                                    <li><label><a href="javascript:;">班长</a></label></li>
+                                                    <li><label><a href="javascript:;">学习委员</a></label></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><label><a href="javascript:;">实验班</a></label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label><a href="javascript:;">抚顺市</a></label>
+                <ul class="two">
+                    <li><label><a href="javascript:;">二小</a></label></li>
+                    <li><label><a href="javascript:;">一中</a></label></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script type="text/javascript" >
+    /**一般JS方法
+     function addEvent(el,name,fn){//绑定事件
+if(el.addEventListener) return el.addEventListener(name,fn,false);
+return el.attachEvent('on'+name,fn);
+}
+     function nextnode(node){//寻找下一个兄弟并剔除空的文本节点
+if(!node)return ;
+if(node.nodeType == 1)
+return node;
+if(node.nextSibling)
+return nextnode(node.nextSibling);
+}
+     function prevnode(node){//寻找上一个兄弟并剔除空的文本节点
+if(!node)return ;
+if(node.nodeType == 1)
+return node;
+if(node.previousSibling)
+return prevnode(node.previousSibling);
+}
+     addEvent(document.getElementById('root'),'click',function(e){//绑定点击事件，使用root根元素代理
+e = e||window.event;
+var target = e.target||e.srcElement;
+var tp = nextnode(target.parentNode.nextSibling);
+switch(target.nodeName){
+case 'A'://点击A标签展开和收缩树形目录，并改变其样式
+if(tp&&tp.nodeName == 'UL'){
+if(tp.style.display != 'block' ){
+tp.style.display = 'block';
+prevnode(target.parentNode.previousSibling).className = 'ren'
+}else{
+tp.style.display = 'none';
+prevnode(target.parentNode.previousSibling).className = 'add'
+}
+}
+break;
+case 'SPAN'://点击图标只展开或者收缩
+var ap = nextnode(nextnode(target.nextSibling).nextSibling);
+if(ap.style.display != 'block' ){
+ap.style.display = 'block';
+target.className = 'ren'
+}else{
+ap.style.display = 'none';
+target.className = 'add'
+}
+break;
+}
+});
+     window.onload = function(){//页面加载时给有孩子结点的元素动态添加图标
+var labels = document.getElementById('root').getElementsByTagName('label');
+for(var i=0;i<labels.length;i++){
+var span = document.createElement('span');
+span.style.cssText ='display:inline-block;height:18px;vertical-align:middle;width:16px;cursor:pointer;';
+span.innerHTML = ' '
+span.className = 'add';
+if(nextnode(labels[i].nextSibling)&&nextnode(labels[i].nextSibling).nodeName == 'UL')
+labels[i].parentNode.insertBefore(span,labels[i]);
+else
+labels[i].className = 'rem'
+}
+}
+     **/
+//面向对象方法
+    var Tree = function(o){
+        this.root = document.getElementById(o);
+        this.labels = this.root.getElementsByTagName('label');
+        var that = this;
+        this.int();
+        Tree.prototype.addEvent(this.root,'click',function(e){that.treeshow(e)});
+    }
+    Tree.prototype = {
+        int:function(){//初始化页面，加载时给有孩子结点的元素动态添加图标
+            for(var i=0;i<this.labels.length;i++){
+                var span = document.createElement('span');
+                span.style.cssText ='display:inline-block;height:18px;vertical-align:middle;width:16px;cursor:pointer;';
+                span.innerHTML = ' '
+                span.className = 'add';
+                if(this.nextnode(this.labels[i].nextSibling)&&this.nextnode(this.labels[i].nextSibling).nodeName == 'UL')
+                    this.labels[i].parentNode.insertBefore(span,this.labels[i]);
+                else
+                    this.labels[i].className = 'rem'
+            }
+        },
+        treeshow:function(e){
+            e = e||window.event;
+            var target = e.target||e.srcElement;
+            var tp = this.nextnode(target.parentNode.nextSibling);
+            switch(target.nodeName){
+                case 'A'://点击A标签展开和收缩树形目录，并改变其样式
+                    if(tp&&tp.nodeName == 'UL'){
+                        if(tp.style.display != 'block' ){
+                            tp.style.display = 'block';
+                            this.prevnode(target.parentNode.previousSibling).className = 'ren'
+                        }else{
+                            tp.style.display = 'none';
+                            this.prevnode(target.parentNode.previousSibling).className = 'add'
+                        }
+                    }
+                    break;
+                case 'SPAN'://点击图标只展开或者收缩
+                    var ap = this.nextnode(this.nextnode(target.nextSibling).nextSibling);
+                    if(ap.style.display != 'block' ){
+                        ap.style.display = 'block';
+                        target.className = 'ren'
+                    }else{
+                        ap.style.display = 'none';
+                        target.className = 'add'
+                    }
+                    break;
+            }
+        },
+        addEvent:function(el,name,fn){//绑定事件
+            if(el.addEventListener) return el.addEventListener(name,fn,false);
+            return el.attachEvent('on'+name,fn);
+        },
+        nextnode:function(node){//寻找下一个兄弟并剔除空的文本节点
+            if(!node)return ;
+            if(node.nodeType == 1)
+                return node;
+            if(node.nextSibling)
+                return this.nextnode(node.nextSibling);
+        },
+        prevnode:function(node){//寻找上一个兄弟并剔除空的文本节点
+            if(!node)return ;
+            if(node.nodeType == 1)
+                return node;
+            if(node.previousSibling)
+                return prevnode(node.previousSibling);
+        }
+    }
+    tree = new Tree("root");//实例化应用
+</script>
+</body>
+</html><div style="text-align:center;margin:30px 0 0 0;"><hr style="color:#999;height:1px;">如不能显示效果，请按Ctrl+F5刷新本页</div>
