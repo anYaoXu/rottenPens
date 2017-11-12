@@ -56,4 +56,12 @@
 
 .icon-zhankai { background-position: 0 -879px; }
 
-* { margin: 0; }
+* { margin: 0; padding: 0; }
+
+ul { width: 200px; border: 1px solid red; overflow-x: hidden; }
+
+ul li { list-style-type: none; margin-left: 20px; cursor: pointer; }
+ul li span { width: 100%; display: inline-block; padding: 6px 0; }
+ul li span.active { background-color: #00b3ee; }
+
+span > i { display: inline-block; width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; }
