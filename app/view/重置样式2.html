@@ -1,0 +1,29 @@
+<style type="text/css">
+    .chk_1 {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 15px;
+        left: 10px;
+    }
+    .chk_1 + label {
+        /*background: #ccc;*/
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        top: 17px;
+        left: 12px;
+        background: url("../images/icon/o-moudle-hover.png");
+    }
+    .chk_1:checked + label {
+        /*background:red;*/
+    background: url("../images/icon/role-edit-all.png");
+    }
+</style>
+</head>
+
+<body>
+<input type="checkbox" id="checkbox_a1" class="chk_1">
+<label for="checkbox_a1"></label>
+</body>
