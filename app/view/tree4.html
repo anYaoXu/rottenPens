@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tree4</title>
+    <link rel="stylesheet" href="../css/tree4.css">
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <ul>
+        <li class="li-1">
+            <span><i class="icon-jia-hui"></i>第一中学</span>
+            <ul class="dis-n">
+                <li class="li-2">
+                    <span><i class="icon-jia-hui"></i>一年级</span>
+                    <ul class="dis-n">
+                        <li class="li-3"><span><i class="icon-wendang-lan"></i>一年级-一班</span></li>
+                        <li class="li-3"><span><i class="icon-wendang-lan"></i>一年级-二班</span></li>
+                    </ul>
+                </li>
+                <li class="li-2" data-p="li-1"><span><i class="icon-wendang-lan"></i>二年级</span></li>
+                <li class="li-2" data-p="li-1"><span><i class="icon-wendang-lan"></i>三年级</span></li>
+                <li class="li-2">
+                    <span><i class="icon-jia-hui"></i>四年级</span>
+                    <ul class="dis-n">
+                        <li class="li-3"><span><i class="icon-wendang-lan"></i>一年级-一班</span></li>
+                        <li class="li-3"><span><i class="icon-wendang-lan"></i>一年级-二班</span></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </li>
+        <li class="li-1">
+            <span><i class="icon-jia-hui"></i>第二中学</span>
+            <ul class="dis-n">
+                <li class="li-2"><span><i class="icon-wendang-lan"></i>一年级</span></li>
+                <li class="li-2"><span><i class="icon-wendang-lan"></i>二年级</span></li>
+                <li class="li-2"><span><i class="icon-wendang-lan"></i>三年级</span></li>
+                <li class="li-2"><span><i class="icon-wendang-lan"></i>四年级</span></li>
+            </ul>
+        </li>
+        <li class="li-1">
+            <span><i class="icon-wendang-lan"></i>第三中学</span>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+    $(function () {
+        $("#wrap ul span").click(function () {
+            spanClick(this);
+        });
+        //每个span的点击事件
+        function spanClick(obj) {
+            $("#wrap ul li span").removeClass('active');
+            $(obj).addClass("active");
+            var _thisClsName = $(obj).parent().attr("class");
+            if ($(obj).next("ul").css("display") === 'none') {
+                //下面的是隐藏
+                $("." + _thisClsName).find("ul").slideUp(500);
+                $(obj).next("ul").slideDown(500);
+
+                //处理样式
+                handelStyle('none',obj,_thisClsName);
+            } else if($(obj).next("ul").css("display") === 'block'){
+                //下面是显示  将下一级 隐藏  下面的全部隐藏
+                $(obj).next("ul").slideUp(500);
+                $(obj).next("ul").find("ul").slideUp(500);
+                //处理样式
+                handelStyle('block',obj,_thisClsName);
+            }else{
+                //下面没有 ul
+                $("." + _thisClsName).find("ul").slideUp(500);
+                //处理样式
+                handelStyle('null',obj,_thisClsName);
+            }
+        }
+        //处理样式
+        function handelStyle(type,spanO,liClassName) {
+            if(type==='none'){
+                //下面是隐藏 状态
+                $(spanO).children("i").removeClass().addClass('icon-jian-bai');
+                //处理同级
+                handelStyleS(liClassName,spanO);
+                //处理父级
+                handelStyleP(spanO);
+                //处理子级
+                handelStyleC(spanO);
+            }else if(type === 'block'){
+                //下面是显示 状态
+                $(spanO).children("i").removeClass().addClass('icon-jia-bai');
+                //处理同级
+                handelStyleS(liClassName,spanO);
+                //处理父级
+                handelStyleP(spanO);
+                //处理子级
+                handelStyleC(spanO);
+            }else{
+                //没有子集
+                $(spanO).children("i").removeClass().addClass('icon-wendang-bai');
+                //处理同级
+                handelStyleS(liClassName,spanO);
+                //处理父级
+                handelStyleP(spanO);
+                //处理子级
+                handelStyleC(spanO);
+            }
+        }
+        //处理同级样式
+        function handelStyleS(liClassName,spanO) {
+            $("."+liClassName).each(function (index,liO) {
+                var liO_i = $(liO).children("span").children("i");
+                if(!($(liO).children("span").is($(spanO)))){
+                    if($(liO).children("ul").length>0){
+                        liO_i.removeClass().addClass('icon-jia-hui');
+                    }else{
+                        liO_i.removeClass().addClass('icon-wendang-lan')
+                    }
+                }
+            })
+        }
+        //处理父级样式
+        function handelStyleP(spanO) {
+            var spanO_span = $(spanO).parent().parent().prev("span");
+            if(spanO_span.length>0){
+                spanO_span.children("i").removeClass().addClass('icon-jian-hui');
+            }
+        }
+        //处理子级样式
+        function handelStyleC(spanO) {
+            var spanO_li = $(spanO).next("ul").find("li");
+            spanO_li.each(function (index,sp_li) {
+                var sp_li_span = $(sp_li).children("span");
+                if(sp_li_span.next("ul").length>0){
+                    $(sp_li_span).children('i').removeClass().addClass("icon-jia-hui");
+                }else{
+                    $(sp_li_span).children('i').removeClass().addClass("icon-wendang-lan");
+                }
+            })
+        }
+    })
+</script>
+</html>
