@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.event兼容火狐和IE</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <script type="application/javascript" src="../javaScripts/bootstrapJs/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $("#target").click(function (event) {
+                //在js中绑定方法的时候 方法中可以传event
+                //event.target 操作的目标
+                var dd = getEvent();
+                console.log(dd);
+                alert(this.value);
+                alert(event.target.value);
+            });
+            function getEvent() {
+                //同时兼容ie和ff的写法
+                if(document.all) {
+                    return window.event;
+                }
+                func = getEvent.caller;
+                while(func != null) {
+                    var arg0 = func.arguments[0];
+                    if(arg0) {
+                        if((arg0.constructor == Event || arg0.constructor == MouseEvent) ||
+                            (typeof(arg0) == "object" && arg0.preventDefault && arg0.stopPropagation)) {
+                            return arg0;
+                        }
+                    }
+                    func = func.caller;
+                }
+                return null;
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <input type="button" value="event.target返回事件的目标节点" id="target">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
