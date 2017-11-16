@@ -4,43 +4,91 @@
     <meta charset="UTF-8">
     <title>重置样式</title>
     <style>
-        input[type=radio] {
-            position: relative;
-            width: 15px;
-            height: 1px;
+        #wrap{ width: 500px; height: auto; border:1px solid red; }
+        #checkbox,#radio,#radio1,#button{ width: 100%; height: auto; margin:10px 0;}
+        /*CheckBox 样式*/
+        #checkbox input{ width:20px; height:20px; display: none;}
+        #checkbox label{
+            display: inline-block;
+            height: 20px;
+            background: url("../images/icon/checkbox.png") no-repeat 0 0;
+            background-size: 20px 20px;
+            padding-left: 25px;
         }
-        input[type=radio]::before,
-        input[type=radio]::after {
+        #checkbox input:checked +label{
+            background: url("../images/icon/checkboxed.png") no-repeat 0 0;
+            background-size: 20px 20px;
+        }
+        /*radio 样式*/
+        #radio input{ width: 20px; height: 20px; visibility: hidden; display: none;}
+        #radio label{
+            width: 20px; height: 20px;
+            display: inline-block;
+            background: url("../images/icon/radio.png") no-repeat 0 0;
+            padding-left: 25px;
+        }
+        #radio input:checked+label{
+            background: url("../images/icon/radio-checked.png") no-repeat 0 0;
+        }
+        /*radio1 写的样式不用背景图*/
+        /*before  写border 长宽是 21 * 21 加上border 之后*/
+        /*after   写background  长宽是 11* 11 */
+        /*用定位套在一起 总共差10  向上移动5*/
+        #radio1 input[type=radio]{
+            width: 20px; height: 1px; position: relative;
+        }
+        #radio1 input[type=radio]:after,#radio1 input[type=radio]:before{
             position: absolute;
-            display: block;
             content: '';
             border-radius: 50%;
-            transition: .3s all esae;
         }
-        input[type=radio]::before {
-            top: 0;
-            left: 0;
+        #radio1 input[type=radio]:before{
             width: 15px;
             height: 15px;
+            top: -15px;
+            left: 0;
             border: 3px solid #ccc;
         }
-        input[type=radio]::after {
-            top: 5px;
-            left: 5px;
+        #radio1 input[type=radio]:after{
             width: 11px;
             height: 11px;
-            background-color: #fff;
+            top: -10px;
+            left: 5px;
+            background-color: white;
         }
-        input[type=radio]:checked::before {
-            border-color: #27AE60;
+        #radio1 input[type=radio]:checked::before{
+            border-color: green;
         }
-        input[type=radio]:checked::after {
-            background-color: #27AE60;
+        #radio1 input[type=radio]:checked::after{
+            background-color: green;
         }
     </style>
 </head>
 <body>
-<input type="radio" name="demo">
-<input type="radio" name="demo">
+<div id="wrap">
+    <div id="checkbox">
+        <input type="checkbox" id="checkbox1"/>
+        <label for="checkbox1">吃饭</label>
+        <input type="checkbox" id="checkbox2"/>
+        <label for="checkbox2">睡觉</label>
+        <input type="checkbox" id="checkbox3"/>
+        <label for="checkbox3">打豆豆</label>
+    </div>
+    <div id="radio">
+        <input type="radio" id="nan" name="sex">
+        <label for="nan">男</label>
+        <input type="radio" id="nv" name="sex">
+        <label for="nv">女</label>
+    </div>
+    <div id="radio1">
+        <input type="radio" id="nan1" name="sex1">
+        <label for="nan1">男1</label>
+        <input type="radio" id="nv1" name="sex1">
+        <label for="nv1">女1</label>
+    </div>
+    <div id="button">
+
+    </div>
+</div>
 </body>
 </html>
