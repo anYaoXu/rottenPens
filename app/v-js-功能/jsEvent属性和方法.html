@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-event属性和方法</title>
+
+    <style>
+        *{ margin:0; padding:0;}
+        #wrap{ width: 1000px; height: auto; border:1px solid yellowgreen;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h3>属性</h3>
+        <p>event.type：触发元素的事件类型</p>
+        <P>event.pageX event.pageY 可以确定元素在当前页面的坐标值，是以页面为参考点,不随滑动条移动而变化</P>
+        <p>event.target：获取触发事件的元素</p>
+        <p>event.which：获取在鼠标单击事件中鼠标的左、中、右键（左键1，中间键2，右键3），在键盘事件中键盘的键码值</p>
+        <p>event.currentTarget : 获取冒泡前的当前触发事件的DOM对象, 等同于this</p>
+
+        <h3>方法</h3>
+        <p>onabort 图像的加载被中断</p>
+        <p>onblur  元素失去焦点</p>
+        <p>onchange 域的内容改变</p>
+        <p>onclick  元素的点击事件</p>
+        <p>ondbclick 元素的双击事件</p>
+        <p>onfocus  元素得到焦点事件</p>
+        <p>onkeydown  键盘的按键被按下</p>
+        <p>onkeypress  键盘别按下并被松开</p>
+        <p>onkeyup     键盘按键松开</p>
+        <p>onload  一张页面或是一张图片加载完成</p>
+        <p>onmousedown   鼠标按键被按下</p>
+        <p>onmousemove   鼠标被移动</p>
+        <p>onmouseup  鼠标被 松开</p>
+        <p>onreset  重置按钮被点击</p>
+        <p>onresize  窗口或是框架被重新调整大小</p>
+        <p>onselect  文本被选中</p>
+        <p>onsubmit  确认按钮被点击</p>
+        <p>onunload  用户退出页面</p>
+    </div>
+</body>
+</html>
