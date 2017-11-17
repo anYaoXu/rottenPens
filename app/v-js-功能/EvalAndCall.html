@@ -93,6 +93,30 @@
         <button id="btn5">复杂的call用法</button>
         <p>class(类)2 没有showName 方法 执行的2的name  走的是class1 的showName 方法 </p>
         <button id="btn4">eval 和 call 合用</button>
+
+        <p class="info">
+            在javascript OOP中，我们经常会这样定义： <br>
+            function cat(){}<br>
+            cat.prototype={     <br>
+                food:"fish",     <br>
+                say: function(){           alert("I love "+this.food);     }<br>
+            }<br>
+            var blackCat = new cat;blackCat.say();<br>
+
+            但是如果我们有一个对象whiteDog = {food:"bone"},我们不想对它重新定义say方法，那么我们可以通过call或apply用blackCat的say方法：blackCat.say.call(whiteDog);<br>
+            所以，可以看出call和apply是为了动态改变this而出现的，当一个object没有某个方法，但是其他的有，我们可以借助call或apply用其它对象的方法来操作。<br>
+            用的比较多的，通过document.getElementsByTagName选择的dom 节点是一种类似array的array。<br>
+            它不能应用Array下的push,pop等方法。<br>
+            我们可以通过：var domNodes =  Array.prototype.slice.call(document.getElementsByTagName("*"));<br>
+            这样domNodes就可以应用Array下的所有方法了。<br>
+            其他的就不提了，讲多了反而迷惑。<br>
+
+            作者：杨志<br>
+            链接：https://www.zhihu.com/question/20289071/answer/14644278      <br>
+
+            来源：知乎<br>
+            著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>
+        </p>
     </div>
 </body>
 </html>
