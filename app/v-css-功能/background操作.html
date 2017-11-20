@@ -59,6 +59,19 @@
             width: 800px; height: 500px; margin-top: 20px; border:1px solid gray;
             background:url("../images/1.jpg") no-repeat center center;
         }
+        #div12{
+            width: 800px; height: 500px; border:5px solid red; padding:20px;
+            background: url(../images/2.jpg) no-repeat;
+            background-origin:border-box;
+            /*background-clip:border-box;*/
+            /*在 border-box 的时候 origin 会被 border 覆盖一部分 而 clip  不会被border覆盖 */
+        }
+        #div13{
+            width: 1000px; height: 500px; border:5px solid red; margin-top: 20px;
+            background:url("../images/1.jpg") no-repeat,
+            url("../images/2.jpg") no-repeat 500px 0;
+            /*例子同 div5*/
+        }
     </style>
     <script>
         /**
@@ -97,6 +110,13 @@
         </div>
         <div id="div11">看看center 是怎么用的
             <p>center 是用来定位的 第一个是左右居中 第二个是上下居中</p>
+        </div>
+        <div id="div12">
+            css3 中 background-origin 和 background-clip的应用 <br>
+            当 div 中有背景图  还有 padding 时可以使用
+        </div>
+        <div id="div13">
+            使用多个背景
         </div>
     </div>
 </body>

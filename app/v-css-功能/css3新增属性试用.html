@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3新增属性试用</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        #wrap{ width: 1000px; height: auto; border:1px solid red;}
+        p.title{margin:10px 0; font-size: 20px; color: green; }
+        /*解释性文档*/
+        .info{
+            margin:10px 0;
+
+        }
+        p:not(.title){
+            color:darkgreen;
+        }
+        p::selection{
+            background-color: #1e7e34;
+            color: white;
+        }
+       .info p:nth-last-child(2){
+            color:red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p class="title">direction 定义文字排序方式</p>
+        <p style=" direction: rtl;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p style=" direction: rtl;unicode-bidi:bidi-override;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p style=" direction: ltr;unicode-bidi:bidi-override;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p> </p>
+        <p class="title">text-overflow 定义省略文本的显示方式</p>
+        <p style="width: 498px; height: 25px; border:1px solid red; overflow: hidden; white-space: nowrap;text-overflow: ellipsis;">
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+        </p>
+        <p style="width: 200px; height: auto; word-wrap: break-word; margin:10px 0; border:1px solid yellowgreen;">
+            会不会折行显示  会不会折行显示  会不会折行显示  会不会这行显示  会不会这行显示  会不会这行显示
+        </p>
+        <p class="title">选择器的使用</p>
+        <div class="info">
+            <p class="title">:before ::before 的关系与区别</p>
+            <p>单冒号(:)用于css3的伪类   双冒号(::) 用于css3的伪元素</p>
+            <p>对于 css2 之前就存在的 :before :after  单冒号和双冒号没有区别</p>
+
+            <p>
+                结构性伪类 <br>
+                E:nth-child(n) 表示E元素中的第几个节点 <br>
+                E:nth-child(odd)  匹配奇数行 <br>
+                E:nth-child(even) 匹配偶数行 <br>
+                E:nth-last-child(n)  表示E元素中的第n个节点，从后向前计算 <br>
+                <br>
+                E:nth-of-type(n)     表示E元素中的第n个节点，且类型为E <br>
+                E:nth-last-of-type(n)   表示E元素中的第n个节点，且类型为E，从后向前计算 <br>
+                <br>
+                E:empty  表示E元素中没有子节点 注意：子节点包含文本几点 <br> <br>
+                E:only-child   表示E元素中只有一个子节点。  注意:子节点不包含文本几点
+                <br>
+                E:disabled 表示不可以点击的表单控件 <br>
+                E:enabled  表示可以点击的表单控件 <br>
+                E:checked  表示已选中的checkbox 或radio <br>
+                <br>
+                E:first-line  表示E:元素中的第一行 <br>
+                E:first-letter 表示E元素中的第一个字符 <br>
+                E::selection 表示E元素在用户选中文字时 <br>
+                E::before   生成的元素在E元素之前 <br>
+                E::after    生成的元素在E元素之后 <br>
+                <br>
+                E:not(s)   表示E元素不被匹配 <br>
+                E~F  表示E 元素毗邻的F元素 (E后面所有的兄弟元素F)<br>
+                <br>
+            </p>
+            <br>
+            <br>
+            <h3>不是css3新增的选择器</h3>
+            <p>
+                ul li 所有的子元素 <br>
+                div>p  div 的  儿子 元素 p<br>
+                div + p  div的相邻的兄弟元素 p<br>
+            </p>
+            <p></p>
+
+        </div>
+        <p> 伪元素和伪类的区别</p>
+        <p> 能找到元素的就是伪元素  找不到元素的就是伪类</p>
+        <p> calc() 方法 使用 ： 动态计算长度值</p>
+        <p style="width: calc(100% - 50px); background-color: #d6d8d9">
+            我的宽度是 100%-50px
+        </p>
+
+
+    </div>
+</body>
+</html>

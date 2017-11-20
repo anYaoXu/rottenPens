@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3-transform-变换</title>
+    <style>
+        img{ display:block; margin:10px 10px; width: 300px; height: 200px; background-size: 100%;}
+        #img1{ transform: translate(10px,20px);}  /*平移 */
+        #img2{ transform: rotate(8deg);}   /*旋转 */
+        #img3{ transform: scale(1.5);}   /*缩放 */
+        #img4{ transform: skew(8deg);}   /*倾斜 */
+        #img5{ transform: skew(8deg); transform: rotate(8deg);transform: scale(1.5);}   /*倾斜 */
+
+    </style>
+</head>
+<body>
+<img id="img1" src="../images/1.jpg" alt="">
+<img id="img2" src="../images/1.jpg" alt="">
+<img id="img3" src="../images/1.jpg" alt="">
+<img id="img4" src="../images/1.jpg" alt="">
+<img id="img5" src="../images/1.jpg" alt="">
+<div>
+    <p>translate 平移</p>
+    <p>rotate 旋转</p>
+    <p>scale 缩放</p>
+    <p>skew 倾斜</p>
+</div>
+</body>
+</html>
