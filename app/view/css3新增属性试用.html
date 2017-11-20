@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3新增属性试用</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        #wrap{ width: 1000px; height: auto; border:1px solid red;}
+        p.title{margin:10px 0; font-size: 20px; color: green; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p class="title">direction 定义文字排序方式</p>
+        <p style=" direction: rtl;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p style=" direction: rtl;unicode-bidi:bidi-override;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p style=" direction: ltr;unicode-bidi:bidi-override;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p> </p>
+        <p class="title">text-overflow 定义省略文本的显示方式</p>
+        <p style="width: 498px; height: 25px; border:1px solid red; overflow: hidden; white-space: nowrap;text-overflow: ellipsis;">
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+        </p>
+        <p class="title">选择器的使用</p>
+    </div>
+</body>
+</html>

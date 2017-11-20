@@ -128,7 +128,7 @@
             color: white;
             border-radius: 5px;
             background-color: #1e7e34;
-            box-shadow: 0 5px #353c31;
+            box-shadow: 0 5px #353c31;  /*水平阴影位置  垂直阴影位置  模糊距离  阴影尺寸 颜色*/
             position: absolute;
             top: 0;
             left: 250px;
@@ -137,6 +137,11 @@
         .shadowBtn:active {
             top: 5px;
             box-shadow: 0 0 #353c31;
+        }
+        /*解释性文档*/
+        .info{
+            margin:10px 0;
+
         }
     </style>
 </head>
@@ -166,6 +171,27 @@
         <input type="button" value="去除掉所有样式的按钮" onclick="alert('点击了')">
         <input type="button" class="simpleBtn" value="简单按钮" onclick="alert('点击了简单按钮')">
         <input type="button" class="shadowBtn" value="阴影按钮">
+    </div>
+
+    <div class="info">
+        <p>:before ::before 的关系与区别</p>
+        <p>单冒号(:)用于css3的伪类   双冒号(::) 用于css3的伪元素</p>
+        <p>对于css2 之前就存在的 :before :after  单冒号和双冒号没有区别</p>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p style=" direction: rtl;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p style=" direction: rtl;unicode-bidi:bidi-override;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+        <p style=" direction: ltr;unicode-bidi:bidi-override;">文字的排序方式  文字的排序方式  文字的排序方式</p>
+
+        <p style="width: 498px; height: 25px; border:1px solid red; overflow: hidden; white-space: nowrap;text-overflow: ellipsis;">
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+            clip 无省略号 Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+        </p>
     </div>
 </div>
 </body>
