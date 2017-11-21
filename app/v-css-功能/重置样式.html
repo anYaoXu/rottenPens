@@ -139,6 +139,13 @@
             box-shadow: 0 0 #353c31;
         }
 
+        button{
+            border:none;
+        }
+        button:focus{
+            border:none;
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -164,6 +171,7 @@
         <label for="nv1">女1</label>
     </div>
     <div id="button">
+        <button>button 去除所有的样式</button>
         <input type="button" value="去除掉所有样式的按钮" onclick="alert('点击了')">
         <input type="button" class="simpleBtn" value="简单按钮" onclick="alert('点击了简单按钮')">
         <input type="button" class="shadowBtn" value="阴影按钮">
