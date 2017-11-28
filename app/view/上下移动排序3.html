@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My JSP 'index.jsp' starting page</title>
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <style>
+        p{ width: 500px; height: 20px; border: 1px solid red; margin: 20px 0;}
+    </style>
+</head>
+
+<body>
+
+<div id="adTitleList">
+    <p id="p1">第1个元素</p>
+    <p id="p2">第2个元素</p>
+    <p id="p3">第3个元素</p>
+    <p id="p4">第4个元素</p>
+    <input type="button" id="btn1" value="移动">
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        // 扩展jQuery实例函数
+        jQuery.fn.extend({
+            /**
+             * 在同辈元素中向上或向下移动
+             * @param direction 'up'或'down'
+             */
+            move: function(direction){
+                var me = this;
+                var another = null;
+                if(direction == 'up'){
+
+                    another = me.prev();   //把要移动的元素的上一个赋给 another
+                    another.before(me);    //把点击的元素放到another 前面
+
+                }else if(direction == 'down'){
+                    another = me.next();
+                    another.after(me);
+                }
+                return this;
+            }
+        });
+
+        $("#btn1").click(function () {
+            /* *** 调用举例  ***/
+            var $p = $('#p2');
+            var success = $p.move('up');    //移动成功则为true，否则false
+            console.log(success);
+        })
+    })
+
+
+
+
+</script>

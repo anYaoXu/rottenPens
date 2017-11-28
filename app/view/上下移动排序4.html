@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My JSP 'index.jsp' starting page</title>
+    <script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+    <style>
+        #div1 {
+            width: 700px;
+            height: 500px;
+            border: 1px solid green;
+            position: relative;
+        }
+
+        p {
+            width: 500px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid red;
+            margin: 20px 0;
+            position: absolute;
+            left: 20px;
+        }
+
+        p span {
+            display: inline-block;
+        }
+
+        .handel {
+            width: 20px;
+            height: 40px;
+            background-size: 100%;
+            float: right;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .up {
+            background: url("../images/icon/up.png") no-repeat 0 10px;
+        }
+
+        .down {
+            background: url("../images/icon/down.png") no-repeat 0 10px;
+        }
+
+        .dis-up {
+            background: url("../images/icon/dis-up.png") no-repeat 0 10px;
+        }
+
+        .dis-down {
+            background: url("../images/icon/dis-down.png") no-repeat 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="div1">
+    <p id="p1" style="top: 20px;">
+        <span>第1个元素</span>
+        <span class="handel down"></span>
+        <span class="handel dis-up"></span>
+    </p>
+    <p id="p2" style="top: 80px;">
+        <span>第2个元素</span>
+        <span class="handel down"></span>
+        <span class="handel up"></span>
+    </p>
+    <p id="p3" style="top: 140px;">
+        <span>第3个元素</span>
+        <span class="handel down"></span>
+        <span class="handel up"></span>
+    </p>
+    <p id="p4" style="top: 200px;">
+        <span>第4个元素</span>
+        <span class="handel dis-down"></span>
+        <span class="handel up"></span>
+    </p>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+
+        $(".handel").click(function () {
+            var event = getEvent();
+            var clsName = event.target.className;
+            if (clsName.indexOf('up') > 0 && clsName.indexOf('dis-')<0) {
+                moveObj($(event.target).parent(), 'up',event.target);
+            } else if (clsName.indexOf('down') > 0 && clsName.indexOf('dis-')<0) {
+                moveObj($(event.target).parent(), 'down',event.target);
+            }
+        });
+
+        //改top 值的同时 修改 dome 位置以便next prev 找到元素方便
+        function moveObj(obj, type,o) {
+            var thisT = $(obj).css("top");
+            if (type == 'up') {
+                var preT = $(obj).prev().css("top");
+                $(obj).animate({top: preT});
+                $(obj).prev("p").animate({top: thisT}, function () {
+                    handelDis();
+                });
+                $(obj).move('up');
+            } else {
+                var nextT = $(obj).next().css("top");
+                $(obj).animate({top: nextT});
+                $(obj).next("p").animate({top: thisT}, function () {
+                    handelDis();
+                });
+                $(obj).move('down');
+            }
+        }
+
+        function getEvent() {
+            //同时兼容ie和ff的写法
+            if (document.all) {
+                return window.event;
+            }
+            func = getEvent.caller;
+            while (func != null) {
+                var arg0 = func.arguments[0];
+                if (arg0) {
+                    if ((arg0.constructor == Event || arg0.constructor == MouseEvent) ||
+                        (typeof(arg0) == "object" && arg0.preventDefault && arg0.stopPropagation)) {
+                        return arg0;
+                    }
+                }
+                func = func.caller;
+            }
+            return null;
+        }
+
+        // 扩展jQuery实例函数
+        jQuery.fn.extend({
+            /**
+             * 在同辈元素中向上或向下移动
+             * @param direction 'up'或'down'
+             */
+            move: function (direction) {
+                var me = this;
+                var another = null;
+                if (direction == 'up') {
+
+                    another = me.prev();   //把要移动的元素的上一个赋给 another
+                    another.before(me);    //把点击的元素放到another 前面
+
+                } else if (direction == 'down') {
+                    another = me.next();
+                    another.after(me);
+                }
+                return this;
+            }
+        });
+        //调用一个方法 让第一个 和 最后一个的 上 和 下按钮不能点击
+        //obj 为 当前点击的元素  点击完成之后判断是第一个 还是 最后一个 加上一个状态
+        function handelDis() {
+            var pList = $("#div1 p");
+            $.each(pList,function (index,p) {
+                if(index==0){
+                    //第一个
+                    $(p).children(".up").removeClass("up").addClass("dis-up");
+                }else if(index+1 == pList.length){
+                    //最后一个
+                    $(p).children(".down").removeClass("down").addClass("dis-down");
+                }else{
+                    $(p).children(".dis-up").removeClass("dis-up").addClass("up");
+                    $(p).children(".dis-down").removeClass("dis-down").addClass("down");
+                }
+            })
+        }
+    })
+
+</script>
