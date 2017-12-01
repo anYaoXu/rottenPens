@@ -55,7 +55,10 @@
 
 <body>
 
+<input type="button" value="新增" id="input1">
+
 <div id="div1">
+
     <p id="p1" style="top: 20px;">
         <span>第1个元素</span>
         <span class="handel down"></span>
@@ -73,6 +76,11 @@
     </p>
     <p id="p4" style="top: 200px;">
         <span>第4个元素</span>
+        <span class="handel down"></span>
+        <span class="handel up"></span>
+    </p>
+    <p id="p5" style="top: 260px;">
+        <span>第5个元素</span>
         <span class="handel dis-down"></span>
         <span class="handel up"></span>
     </p>
@@ -103,17 +111,20 @@
 </html>
 <script type="text/javascript">
     $(function () {
-
         $(".handel").click(function () {
-            var event = getEvent();
-            var clsName = event.target.className;
-            if (clsName.indexOf('up') > 0 && clsName.indexOf('dis-')<0) {
-                moveObj($(event.target).parent(), 'up',event.target);
-            } else if (clsName.indexOf('down') > 0 && clsName.indexOf('dis-')<0) {
-                moveObj($(event.target).parent(), 'down',event.target);
-            }
+            handelSort()
         });
-
+        handelSort= function() {
+            var event = getEvent();
+            if(event){
+                var clsName = event.target.className;
+                if (clsName.indexOf('up') > 0 && clsName.indexOf('dis-')<0) {
+                    moveObj($(event.target).parent(), 'up',event.target);
+                } else if (clsName.indexOf('down') > 0 && clsName.indexOf('dis-')<0) {
+                    moveObj($(event.target).parent(), 'down',event.target);
+                }
+            }
+        }
         //改top 值的同时 修改 dome 位置以便next prev 找到元素方便
         function moveObj(obj, type,o) {
             var thisT = $(obj).css("top");
@@ -121,16 +132,25 @@
                 var preT = $(obj).prev().css("top");
                 $(obj).animate({top: preT});
                 $(obj).prev("p").animate({top: thisT}, function () {
-                    handelDis();
+                    if($(obj).move($(obj),'up')){
+                        console.log("成功");
+                        handelDis();
+                    }else{
+                        console.log("失败");
+                    }
                 });
-                $(obj).move('up');
+
             } else {
                 var nextT = $(obj).next().css("top");
                 $(obj).animate({top: nextT});
                 $(obj).next("p").animate({top: thisT}, function () {
-                    handelDis();
+                    if($(obj).move($(obj),'down')){
+                        console.log("成功");
+                        handelDis();
+                    }else{
+                        console.log("失败");
+                    }
                 });
-                $(obj).move('down');
             }
         }
 
@@ -159,19 +179,24 @@
              * 在同辈元素中向上或向下移动
              * @param direction 'up'或'down'
              */
-            move: function (direction) {
-                var me = this;
-                var another = null;
-                if (direction == 'up') {
+            move: function (obj,direction) {
+                var me = $(obj);
+                if(me){
+                    var another = null;
+                    if (direction == 'up') {
 
-                    another = me.prev();   //把要移动的元素的上一个赋给 another
-                    another.before(me);    //把点击的元素放到another 前面
+                        another = me.prev();   //把要移动的元素的上一个赋给 another
+                        another.before(me);    //把点击的元素放到another 前面
 
-                } else if (direction == 'down') {
-                    another = me.next();
-                    another.after(me);
+                    } else if (direction == 'down') {
+                        another = me.next();
+                        another.after(me);
+                    }
+                    return this;
                 }
-                return this;
+                else{
+                    return false;
+                }
             }
         });
         //调用一个方法 让第一个 和 最后一个的 上 和 下按钮不能点击
@@ -191,6 +216,19 @@
                 }
             })
         }
+
+        $("#input1").click(function () {
+            var top = (($("#div1 p").length)*60+20)+"px";
+            var id = "p"+($("#div1 p").length+1);
+            $("#div1").append("<p id='"+id+"'"
+                    +" style='top: "+top+"'>"
+                    +"<span>第"+($("#div1 p").length+1)+"个元素</span>"
+                    +"<span class='handel dis-down' onclick='handelSort()'></span>"
+                    +"<span class='handel up' onclick='handelSort()'></span>"
+                    +"</p>");
+            handelDis();
+
+        })
     })
 
 </script>
