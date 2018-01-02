@@ -45,13 +45,6 @@ a {
     text-decoration: none !important;
     outline-style: none !important;
     -moz-outline-style: none !important;
-    color: red;
-}
-a:hover{
-    color: red;
-}
-a:focus{
-    color: red;
 }
 ul,
 ul li,
@@ -80,3 +73,4 @@ button,input[type=button]:focus{
     visibility: hidden;
     height: 0;
 }
+table{border-collapse:collapse;}
