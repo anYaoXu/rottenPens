@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>佳木斯教育云</title>
+    <link rel="stylesheet" type="text/css" href="css/sy.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/jydtxq.css" />
+</head>
+<body>
+    <div id="wrap">
+        <div class="hp-sy-nav">
+            <span class="sy-logo icon-logo"></span>
+            <ul>
+                <li class="hp-nav-zypt">
+                    <a href="javascript:void(0);" class="hp-zypthref">资源平台</a>
+                </li>
+                <li class="hp-nav-zhjyx">
+                    <a href="javascript:void(0);">智慧教与学</a>
+                </li>
+                <li class="hp-nav-jypt">
+                    <a href="javascript:void(0);">教研平台</a>
+                </li>
+                <li class="hp-nav-rrtsq">
+                    <a href="javascript:void(0);">人人通社区</a>
+                </li>
+                <li class="hp-nav-yyzx">
+                    <a href="javascript:void(0);">应用中心</a>
+                </li>
+                <li class="hp-nav-jysc">
+                    <a href="javascript:void(0);">积分商城</a>
+                </li>
+                <li class="hp-nav-jyglpt">
+                    <a href="javascript:void(0);">教育管理平台</a>
+                </li>
+                <li class="hp-nav-dshd">
+                    <a href="javascript:void(0);">活动大赛</a>
+                </li>
+                <li class="hp-nav-help">
+                    <a href="javascript:void(0);" class="hp-help">帮助</a>
+                </li>
+            </ul>
+        </div>
+        <div class="hp-syimg">
+            <div class="hd">
+                <ul>
+                    <!--<li class="on"></li>-->
+                    <!--<li class=""></li>-->
+                    <!--<li class=""></li>-->
+                </ul>
+            </div>
+            <div class="bd">
+                <ul class="sybanner">
+                    <li class="banner-zypt">
+                        <a href="javascript:void(0)">
+                            <img src="images/zypt1200.png" />
+                        </a>
+                    </li>
+                    <li class="banner-zhjyx">
+                        <a href="javascript:void(0)">
+                            <img src="images/zhjyx1200.png" />
+                        </a>
+                    </li>
+                    <li class="banner-jypt">
+                        <a href="javascript:void(0)">
+                            <img src="images/jypt1200.png" />
+                        </a>
+                    </li>
+                    <li class="banner-rrtsq">
+                        <a href="javascript:void(0)">
+                            <img src="images/rrtsq1200.png" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hp-login-box">
+                <div class="nologinbox nologinbox1" style="display: none;">
+                    <div class="hp-login-title pt-5">请登录</div>
+                    <table>
+                        <tr>
+                            <td class="hp-wrongmsg"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hp-login-username">
+                                    <input type="text" class="username" name="username" placeholder="请输入账号/手机号/邮箱" onkeyup="(function(){if(event.keyCode==13){$('#password').focus();}})()" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hp-login-password">
+                                    <input type="password" class="password" name="password" placeholder="请输入密码" onkeyup="(function(){if(event.keyCode==13){login()}})()" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="hp-jzmm">
+                                <input type="checkbox" name="autoLogin" id="autoLogin" value="" />
+                                <label for="autoLogin">记住密码</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="hp-login-dl" type="button" value="登录" id="btnLogin" onclick="login()" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:void(0)" class="login-foget pull-left">忘记密码</a>
+                                <a href="javascript:void(0)" class="sy-sign login-sign">注册</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="hasloged nologinbox1" style="display: block">
+                    <div class="personimg">
+                        <img src="images/zhjyx_icon.png" alt="" width="83" height="83" class="hp-img-log" />
+                        <p class="sy-user color333">佳木斯友谊小学</p>
+                    </div>
+                    <ul class="hp-zygzjfbox _clear">
+                        <li>
+                            <p class="hp-zy-num hp-num">0</p>
+                            <p class="color333 fs16">资源</p>
+                        </li>
+                        <li>
+                            <p class="hp-gznum hp-num">0</p>
+                            <p class="color333 fs16">粉丝</p>
+                        </li>
+                        <li>
+                            <p class="hp-jf-num hp-num">0</p>
+                            <p class="color333 fs16">积分</p>
+                        </li>
+                    </ul>
+                    <input type="button" name="" id="grzx-encroll" value="个人中心" class="enterGrkj grzx-encroll grzxC" />
+                    <div class="hp-color-fff">
+                        <a href="javascript:void(0)" class="pull-left sy-lowgout color333">安全退出</a>
+                        <a href="javascript:void(0)" class="pull-right sy-grsz color333">个人设置</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hp-main-box">
+            <div class="hp-l-outer">
+                <div class="hp-jyzx-cont">
+                    <div class="slideTxtBox">
+                        <div class="hd">
+                            <i class="hp-blocks hp-bac-1199FF"></i>
+                            <ul class="hp-sy-tab">
+                                <li class="on tab-jyzx">教育资讯</li>
+                                <li class="tab-tzgg">通知公告</li>
+                            </ul>
+                            [@cms_channel sign='jyzx']
+                            <a href="${tag_bean.url}" class="hp-fxgd jyzx-more" target="_blank">更多</a>
+                            [/@cms_channel] [@cms_channel sign='tzgg']
+                            <a href="${tag_bean.url}" class="hp-fxgd tzgg-more" target="_blank">更多</a>
+                            [/@cms_channel]
+                        </div>
+                        <div class="tempWrap">
+                            <div class="bd">
+                                <ul>
+                                    [@cms_content_list channelSign='jyzx' channelOption='2' count='7' dateFormat='MM-dd'] [#list tag_list as a]
+                                    <li>
+                                        <a href="${a.url}" target="_blank">${a.title}</a>
+                                        <span class="date">${a.date?string(dateFormat)}</span>
+                                    </li>
+                                    [/#list] [/@cms_content_list]
+                                </ul>
+                                <ul>
+                                    [@cms_content_list channelSign='tzgg' channelOption='2' count='7' dateFormat='MM-dd'] [#list tag_list as a]
+                                    <li>
+                                        <a href="${a.url}" target="_blank">${a.title}</a>
+                                        <span class="date">${a.date?string(dateFormat)}</span>
+                                    </li>
+                                    [/#list] [/@cms_content_list]
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hp-r-outer">
+                <div class="hp-cgzs-tit">
+                    <i class="hp-blocks hp-bac-1199FF"></i>
+                    <span class="hp-chzs-title">活动大赛</span>
+                    <a href="${tag_bean.url}" class="hp-fxgd" target="_blank">更多</a>
+                </div>
+
+                <div class="hp-cgzs-cont">
+                    <ul>
+                        <li class="cgzs-firstimg">
+                            <a href="${a.url}" target="_blank">
+                                <img src="${p.imgPath!site.defImg}" width="100%" height="100%" class="wd-img-cut" /> [/#if] [/#list]
+                                <div class="hp-absobottom">${a.title}</div>
+                            </a>
+                        </li>
+                        <li class="cgzs-img">
+                            <a href="${a.url}" target="_blank">
+                                <img src="${p.imgPath!site.defImg}" width="100%" height="100%" class="wd-img-cut" /> [/#if] [/#list]
+                                <div class="hp-absobottom">${a.title}</div>
+                            </a>
+                        </li>
+                        <li class="cgzs-img">
+                            <a href="${a.url}" target="_blank">
+                                <img src="${p.imgPath!site.defImg}" width="100%" height="100%" class="wd-img-cut" /> [/#if] [/#list]
+                                <div class="hp-absobottom">${a.title}</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="lm-bottom">
+            <div class="lm-bottom-box">
+                <div class="bottom-box-div">
+                    <div class="pull-left lm-bottom-left">
+                        <p>伟东云教育集团 技术支持</p>
+                    </div>
+                    <div class="pull-left lm-bottom-right">
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hp-tc-loginbox">
+            <div class="hp-tck-login">
+                <div class="hp-login-title hp-bac-1199FF">用户登录<span class="hp-closelogin pull-right">关闭</span></div>
+
+                <table>
+                    <tr>
+                        <td class="hp-wrongmsgtc"></td>
+                    </tr>
+                    <tr>
+                        <a href=""></a>
+                        <td>
+                            <div class="hp-login-password">
+                                <input type="password" class="password-tc" name="password" placeholder="请输入密码"
+                                       onkeyup="(function(){if(event.keyCode==13){login()}})()"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hp-jzmm">
+                            <input type="checkbox" name="autoLogin" id="autoLogin" value=""/>
+                            <label for="autoLogin">记住密码</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!--<div class="hp-login-wjmm"><input type="checkbox" /><label>记住密码</label></div>-->
+                            <input class="hp-login-dl" type="button" value="登录" id="btnLogintc" onclick="login()"/></td>
+
+                        <td>
+                            <div class="hp-login-username">
+                                <input type="text" class="username-tc" name="username" placeholder="请输入账号/手机号/邮箱"
+                                       onkeyup="(function(){if(event.keyCode==13){$('#password').focus();}})()"/>
+                            </div>
+                        </td>
+
+                        <td>
+                            <a href="javascript:void(0)" class="sy-sign login-sign color1199FF">注册</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="usertypechoose">
+            <div class="hp-choose-top">选择身份<i class="hp-closechoose"></i></div>
+            <div class="hp-choose-cont">
+                <ul id="sfxzboxes">
+                    <!--<li data-msg="01">-->
+                    <!--<i class="sf-ls"></i>-->
+                    <!--<p>我是老师</p>-->
+                    <!--</li>-->
+                    <!--<li data-msg="02"><i class="sf-xs"></i>-->
+                    <!--<p>我是学生</p>-->
+                    <!--</li>-->
+                    <!--<li data-msg="03"><i class="sf-jz"></i>-->
+                    <!--<p>我是家长</p>-->
+                    <!--</li>-->
+                    <!--<li data-msg="04"><i class="sf-jyy"></i>-->
+                    <!--<p>我是教务管理员</p>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/requestAddressList.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/jquery.SuperSlide.2.1.2.js" type="text/javascript"></script>
+<script src="js/base64.min.js" type="text/javascript"></script>
+<script src="js/alert.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/sy.js"></script>
+</html>
