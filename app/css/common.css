@@ -74,3 +74,33 @@ button,input[type=button]:focus{
     height: 0;
 }
 table{border-collapse:collapse;}
+
+/*美化checkbox*/
+/*CheckBox 样式*/
+#checkbox input {
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+}
+
+#checkbox label {
+    display: inline-block;
+    height: 20px;
+    background: url("../images/icon/checkbox.png") no-repeat 0 0;
+    background-size: 20px 20px;
+    padding-left: 25px;
+}
+
+#checkbox input:checked + label {
+    background: url("../images/icon/checkboxed.png") no-repeat 0 0;
+    background-size: 20px 20px;
+}
+.slh{
+    overflow: hidden; text-overflow:ellipsis; white-space: nowrap;
+}
+.zh{
+    /*word-wrap:break-word;*/
+    /* 只能折行 中文和英文字母会分开折行  */
+    word-break:break-all
+    /* 强制换行  中文和英文字母不会分开折行*/
+}
