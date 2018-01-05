@@ -3,44 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
-        body {
-            margin: 0px;
-        }
-        ul {
-            list-style: none;
-            margin: 0px;
-            padding: 0px;
-        }
-    </style>
-    <script src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript">
-        var n = 0;
-        var winHeight = $(window).height();    //得到可视区的高度
-        $(function () {
-            loadimg();
-            $(window).scroll(function () {
-                if (n < 20) {
-                    var docTop = $(document).scrollTop();    //滚动条距离顶部的高度
-                    var contentHeight = $("#content").height();
-                    if (docTop + winHeight >= contentHeight - 10) {
-                        //滚动条拉到下面
-                        // 滚动条距离顶部的距离 + 当前浏览器窗口高度  >  整个图片区域的高度  进行加载图片
-                        loadimg();
-                    }
-                }
-            });
-        });
-        function loadimg() {
-            for (i = 0; i < 5; i++) {
-                $("#content").append("<li><img src='../images/1.jpg'/></li>");
-            }
-            n += 5;
-        }
-    </script>
+
 </head>
 <body>
-<ul id="content">
-</ul>
+  <p>https://segmentfault.com/a/1190000003881643</p>
+  <p>http://www.jb51.net/article/98410.htm</p>
+
+  <p>http://www.17sucai.com/pins/demoshow/26071</p>
 </body>
+<script src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
 </html>

@@ -19,7 +19,7 @@
         var winHeight = $(window).height();    //得到可视区的高度
         $(function () {
             loadimg();
-            $(window).scroll(function () {
+            $(window).scroll(function () {  //必须首次让页面出现滚动条  才有滚动事件  才能触发后续的方法
                 if (n < 20) {
                     var docTop = $(document).scrollTop();    //滚动条距离顶部的高度
                     var contentHeight = $("#content").height();
