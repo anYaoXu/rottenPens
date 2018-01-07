@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        #wrap{
+            width: 50%;
+            height: 800px;
+            border:2px solid red;
+            overflow-x: auto;
+            padding-left:2px;
+        }
+        #wrap p{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            white-space:nowrap
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p>offsetWidth = width + padding + border;    当前对象的宽度 </p>
+
+        <p>offsetHeight = height + padding + border;   当前对象的宽度</p>
+
+        <p>clientWidth  获取对象可见内容的宽度  包含padding  不包括边框 不包括滚动条</p>
+
+        <p>clientHeight  获取对象可见内容的高度  不包含边框  不包括滚动条</p>
+
+        <p>scrollWidth  对象的实际内容的宽度，不包含线的宽度，会随着内容超过可视区而变大；当元素的内容超过元素的宽度 而产生滚动条的时候 scrollWidth > clientWidth  如果元素的内容没有超过元素的宽的  此时  scrollWidth = clientWidth</p>
+
+        <p>scrollHeight  获取对象滚动条的高度</p>
+
+        <p>offsetLeft  当前对象到其上级左边的距离 与其对应的是  style.left</p>
+
+        <p>offsetTop  当前对象到其上级顶部的距离  与其对应的是 style.top</p>
+
+        <p>clienLeft  获取对象的border的宽度</p>
+
+        <p>clientTop  获取对象的border的高度</p>
+
+        <p>sdfsdfslkjfdjfa fd fdskfjsldkfjsda fds fjsalfjlsadjfsd asdljfaldskfjasldkjfoweurlkshfezhid e shi gsguakjashezhideshishezhideshishezhideshishezhideshi se</p>
+
+        <p>如果设置的是 百分比  得到的宽度  是百分比  如果是百分比  就没法得到准确的高度 无论变高变矮都是一样的 还是数字？？？  宽度是带 px 的？</p>
+
+        <p>https://www.cnblogs.com/kongxianghai/p/4192032.html</p>
+
+    </div>
+</body>
+<script type="text/javascript">
+    console.log("页面可见区域宽度 client ："+document.getElementById("wrap").clientWidth);
+    console.log("网页可见区域宽度 offset："+document.getElementById("wrap").offsetWidth);
+    console.log("网页正文全文宽度 scrollWidth："+document.getElementById("wrap").scrollWidth);
+    console.log("屏幕分辨率的宽："+window.screen.width);
+    console.log("屏幕可用工作区高度："+window.screen.availHeight);
+    console.log("clientLeft:"+document.getElementById("wrap").clientLeft);
+    console.log("style.width:"+document.getElementById("wrap").style.width);
+</script>
+</html>

@@ -1,0 +1,89 @@
+html,
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font: 14px/1.5 微软雅黑 !important;
+    overflow-x: hidden;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6,
+dl,dt,dd,
+ul,ol,li,
+th,td,
+p,
+span,
+blockquote,
+pre,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+hr {
+    padding: 0;
+    margin: 0;
+}
+img,
+select,
+input,
+button {
+    vertical-align: middle;
+}
+a,
+input {
+    outline: none;
+}
+a {
+    text-decoration: none !important;
+    outline-style: none !important;
+    -moz-outline-style: none !important;
+    color: #5C5E5D;
+}
+a:hover{
+	color: #FF6600;
+}
+ul,
+ul li,
+ol {
+    list-style: none;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+textarea {
+    border: 1px solid #CCC;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    resize: none;
+}
+.pull-left {
+    float: left !important;
+}
+.pull-right {
+    float: right !important;
+}
+img{
+	border: 0;
+}
+/**********清除浮动样式******************/
+._clear:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+
+/**
+ *	自定义样式区域 
+ */

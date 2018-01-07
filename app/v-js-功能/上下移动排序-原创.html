@@ -27,13 +27,13 @@
         }
 
         .handel {
-            width: 20px;
-            height: 40px;
-            background-size: 100%;
-            float: right;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+             width: 20px;
+             height: 40px;
+             background-size: 100%;
+             float: right;
+             cursor: pointer;
+             margin-right: 10px;
+         }
 
         .up {
             background: url("../images/icon/up.png") no-repeat 0 10px;
@@ -84,6 +84,27 @@
         <span class="handel dis-down"></span>
         <span class="handel up"></span>
     </p>
+
+
+    <!--
+    var swapItems = function (arr, index1, index2) {
+    arr[index1] = arr.splice(index2, 1, arr[index1])[0];
+    return arr;
+    };
+    //点击向上的按钮
+    $scope.upPollItem = function (pollItems, $index) {
+    if ($index == 0) {
+    return false;
+    }
+    swapItems(pollItems, $index, $index - 1);
+    };
+    //点击向下的按钮
+    $scope.downPollItem = function (pollItems, $index) {
+    if ($index == $scope.luckydrawList.length - 1) {
+    return false;
+    }
+    swapItems(pollItems, $index, $index + 1);
+    };-->
 </div>
 
 </body>
