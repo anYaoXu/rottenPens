@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片随机放</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .m-gallery {
+            display: flex;
+            flex-wrap: wrap;  /*规定一行放不下flex元素时自动换行*/
+        }
+
+        .m-gallery .item {
+            height: 100px;
+            flex-grow: 1;  /*每个flex元素占的宽度相同*/
+            margin: 2px;
+        }
+
+        .m-gallery .item img {
+            height: 100px;
+            min-width: 100%;
+            max-width: 100%;
+            object-fit: cover;   /*使图片等比拉伸，可能会被裁减*/
+            vertical-align: bottom;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="m-gallery">
+        <div class="item"><img src="../images/1.jpg"></div>
+        <div class="item"><img src="../images/2.jpg"></div>
+        <div class="item"><img src="../images/1.png"></div>
+        <div class="item"><img src="../images/3.jpg"></div>
+        <div class="item"><img src="../images/3.jpg"></div>
+        <div class="item"><img src="../images/4.jpg"></div>
+        <div class="item"><img src="../images/5.jpg"></div>
+        <div class="item"><img src="../images/3.jpg"></div>
+        <div class="item"><img src="../images/6.jpg"></div>
+        <div class="item"><img src="../images/4.jpg"></div>
+        <div class="item"><img src="../images/5.jpg"></div>
+        <div class="item"><img src="../images/3.jpg"></div>
+        <div class="item"><img src="../images/6.jpg"></div>
+    </div>
+</div>
+</body>
+</html>
