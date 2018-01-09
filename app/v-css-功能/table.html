@@ -123,12 +123,12 @@
 </body>
 <script src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
 <script>
-    window.onload = function () {
+    /*window.onload = function () {
         var flag = false;
         var checekAllObj = document.getElementById("checkAll");
-        checekAllObj.onclick = function () {
+        var checkList = document.getElementsByName("kk");
+        checekAllObj.onclick = function () {  //全选的点击事件
             flag = !flag;
-            var checkList = document.getElementsByName("kk");
             if (flag) {
                 for (var i = 0; i < checkList.length; i++) {
                     checkList[i].checked = true;
@@ -137,24 +137,77 @@
                 for (var i = 0; i < checkList.length; i++) {
                     checkList[i].checked = false;
                 }
-
+            }
+        };
+        //给每个 checkbox  加点击事件
+        for (var i = 0; i < checkList.length; i++) {
+            checkList[i].onclick = function () {
+                if (isCheckAll()) {
+                    flag = true;
+                    document.getElementById("checkAll").checked = true;
+                } else {
+                    flag = false;
+                    document.getElementById("checkAll").checked = false;
+                }
             }
         }
-    }
-
-    /*$(function(){
-        var flag = false;
-        $("#checkAll").click(function () {
-            flag = !flag;
-            var checkList = $("[name='kk']");
-            if(flag){
-                $("[name='kk']").attr("checked","true");
-            }else{
-                $("[name='kk']").removeAttr("checked");
+        //判断是否应该 全选
+        function isCheckAll() {
+            var isCheckAll = true;
+            for (var i = 0; i < checkList.length; i++) {
+                if (!checkList[i].checked) {
+                    isCheckAll = false;
+                    return isCheckAll;
+                }
             }
-        })
+            return isCheckAll;
+        }
+    }*/
 
-    })*/
+    $(function(){
+
+//        $("[name='kk']:even")    找到所有是基数的checked
+//        $("[name='kk']:checked")   找到所有选中的checked
+        var flag = false;
+        var checkList = $("[name='kk']");
+        $("#checkAll").click(function () {
+            var dd = $("[name='kk'][checked]");
+            console.log(dd);
+            flag = !flag;
+            if(flag){
+                for (var i = 0; i < checkList.length; i++) {
+                    $(checkList[i]).prop("checked","true");
+                }
+            }else{
+                for (var i = 0; i < checkList.length; i++) {
+                    $(checkList[i]).prop("checked",false);
+                }
+            }
+        });
+        checkList.click(function(){
+            if (isCheckAll()) {
+                flag = true;
+                $("#checkAll").prop("checked","true");
+            } else {
+                flag = false;
+//                $("#checkAll").removeAttr("checked");   不好使
+//                $("#checkAll").attr("checked",false);    不好使
+                $("#checkAll").prop("checked",false);
+            }
+        });
+        function isCheckAll() {
+            var isCheckAll = true;
+            checkList.each(function () {
+                if($(this).is(":checked")){
+                    console.log("选中")
+                }else{
+                    isCheckAll = false;
+                    return isCheckAll;
+                }
+            });
+            return isCheckAll;
+        }
+    })
 
 </script>
 </html>
