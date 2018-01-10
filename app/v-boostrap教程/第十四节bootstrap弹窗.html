@@ -10,6 +10,24 @@
         .modal-header { padding: 0; border-bottom: 1px solid #e5e5e5; }
         .modal-header .close { margin: 5px 15px 7px 0; outline: none; }
         .modal-title { color: white; font-size: 14px; font-weight: 500; background: #9e95e0; padding: 9px 0 9px 20px; margin: 0; }
+
+        /*下拉列表框 样式美化*/
+        .r-select{ width: 90px;}
+        .r-select .btn{ width: 100%; height: 30px; line-height: 25px; padding: 2px 5px 3px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; position: relative;}
+        .r-select .btn:hover,.r-select .btn:focus,.r-select .btn:active{ outline: none; background-color: white; border-color: #8f87d6; text-decoration: none; box-shadow:none;}
+        .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover{ background-color: white; border-color: #8f87d6;}
+        .open > .dropdown-toggle.btn-default{background-color: white; border-color: #8f87d6;}
+
+        .r-select .dropdown-menu, .dropdown-menu { min-width: 100%; border-radius: 0; border: 1px solid #8f87d6; box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);}
+        .r-select .dropdown-menu .dropup-menu:before { bottom: -5px; top: auto; border: 1px solid #8f87d6; border-left: 0; border-top: 0; }
+        .r-select .dropdown-menu:before { width: 9px; height: 9px; content: ""; display: block; background-color: #ffffff; position: absolute; top: -5px; left: 50%; margin-left: -7px; padding: 0; border: 1px solid #8f87d6; border-right: 0; border-bottom: 0; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+        .r-select .dropdown-menu > li > a{ padding: 6px 8px; width: 100%; font-size: 13px; color: #323232; }
+        .r-select .dropdown-menu > li > a:hover{ background-color: #dddbf1; color: #403963; text-decoration: none; }
+        .r-select .dropdown-menu.scroll{ max-height: 190px; overflow-y: scroll; }
+
+
+
+
     </style>
 </head>
 <body>
@@ -36,14 +54,33 @@
         </div>
     </div>
 
-
     <!--http://www.jb51.net/Special/334.htm   教程-->
     <!--http://www.jb51.net/Special/769.htm  教程-->
-
+    <h4>下拉列表框</h4>
+    <div class="dropdown r-select">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            选择渠道选择渠道选择渠道
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">报名保单</a></li>
+            <li><a href="#">后台导入</a></li>
+            <li><a href="#">报名保单</a></li>
+            <li><a href="#">后台导入</a></li>
+            <li><a href="#">报名保单</a></li>
+            <li><a href="#">后台导入</a></li>
+            <li><a href="#">报名保单</a></li>
+            <li><a href="#">后台导入</a></li>
+            <li><a href="#">报名保单</a></li>
+            <li><a href="#">后台导入</a></li>
+            <li><a href="#">报名保单</a></li>
+            <li><a href="#">后台导入</a></li>
+            <li><a href="#">后台导入</a></li>
+        </ul>
+    </div>
 
 
     <!--鼠标hover 小的提示信息-->
-    <!--下拉框-->
+
     <!--自定义 alert comfirm   弹窗  www.jb51.net/article/80288.htm-->
     <script>
         $(function(){
