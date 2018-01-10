@@ -15,13 +15,15 @@
 <body>
     <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#myDialog1" value="第一个按钮弹窗">
 
-    <!--fade 显示隐藏方式-->
+    <!--fade 显示隐藏方式  -->
+    <!--data-backdrop="static" 点击阴影部分不关闭   -->
+    <!--data-drag="true" 文本框能拖拽 修改了bootstrap 文件 加上了文本框居中和拖拽-->
 
-    <div class="modal modal-dialog fade" id="myDialog1">
-        <div class="modal-content">
+    <div class="modal fade" tabindex="-1" id="myDialog1" data-drag="true">
+        <div class="modal-content" style="width: 500px;">
             <div class="modal-header">
                 <a class="close" data-dismiss="modal">×</a>
-                <h3 class="modal-title">这是一个模态框标题</h3>
+                <h3 class="modal-title" id="exampleModalLabel">这是一个模态框标题</h3>
             </div>
             <div class="modal-body">
                 <h4>模态框中的文本</h4>
@@ -36,13 +38,14 @@
 
 
 
-    <!--弹窗的拖拽-->
+
+
     <!--鼠标hover 小的提示信息-->
     <!--下拉框-->
 
     <script>
         $(function(){
-            $('#myDialog1').modal('show')
+
         })
     </script>
 

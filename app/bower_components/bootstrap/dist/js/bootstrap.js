@@ -1163,8 +1163,141 @@ if (typeof jQuery === 'undefined') {
       paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
       paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
     })
+      this.align();
+      this.drag();
   }
-
+    //模态框居中
+    Modal.prototype.align = function(){
+        //if($(window).height() < $('body')[0].scrollHeight){
+        //  $("body").css({"padding-right":"17px !important"});
+        //}else{
+        //  $("body").css({"padding-right":"0px !important"});
+        //}
+        this.$element.css({
+            paddingLeft:  '0px',
+            paddingRight: '0px'
+        });
+        var that = this;
+        that.$element.children().eq(0).css({
+            "position" : "absolute",
+            "margin":"0px",
+            "top": function () {
+                return (that.$element.height() - that.$element.children().eq(0).outerHeight()) / 2 + "px";
+            },
+            "left": function () {
+                return (that.$element.width() - that.$element.children().eq(0).width()) / 2 + "px";
+            }
+        });
+    }
+    //模态框拖拽
+    Modal.prototype.drag = function(){
+        var that = this;
+        var obj = that.$element.children().eq(0);
+        if(that.$element.attr("data-drag")){
+            obj.on("mousedown.drag",function(e){
+                var ev = window.event || e;
+                var x = ev.clientX;
+                var y = ev.clientY;
+                var st = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
+                var sl = document.documentElement.scrollLeft || window.pageXOffset || document.body.scrollLeft || 0;
+                var l = obj.offset().left - sl;
+                var t = obj.offset().top - st;
+                var w = obj.outerWidth();
+                var h = obj.outerHeight();
+                var s = 10;
+                var b = '';
+                if(that.$element.attr("data-change")){
+                    if ( x > l + w - s ) {
+                        b = 'right';
+                        that.$element.css({"cursor" : "e-resize"})
+                    }
+                    if ( x < l + s ) {
+                        b = 'left';
+                        that.$element.css({"cursor" : "e-resize"})
+                    }
+                    if(y > t + h - s){
+                        b = 'bottom';
+                        that.$element.css({"cursor" : "n-resize"})
+                    }
+                    if(y < t + s){
+                        b = 'top';
+                        that.$element.css({"cursor" : "n-resize"})
+                    }
+                    if(x > l + w - s && y > t + h - s){
+                        b = 'rightbottom';
+                        that.$element.css({"cursor" : "nw-resize"})
+                    }
+                }
+                if(y-t > 40 && b == ""){
+                    return;
+                };
+                if(y-t < 40 && b == ""){
+                    that.$element.css({
+                        "cursor" : "move"
+                    });
+                }
+                that.$element.on("mousemove.drag",function(e){
+                    var ev = window.event || e;
+                    switch(b) {
+                        case 'left':
+                            obj.css({
+                                "width" : w - (ev.clientX - x),
+                                "left" : l + ( ev.clientX - x )
+                            })
+                            break;
+                        case 'right':
+                            obj.css({
+                                "width" : w + ( ev.clientX - x )
+                            })
+                            break;
+                        case 'top':
+                            obj.css({
+                                "height" : h - ( ev.clientY - y ),
+                                "top" : t + ( ev.clientY - y )
+                            })
+                            break;
+                        case 'bottom':
+                            obj.css({
+                                "height" : h + ( ev.clientY - y )
+                            })
+                            break;
+                        case 'rightbottom':
+                            obj.css({
+                                "width" : w + (ev.clientX - x),
+                                "height" : h + ( ev.clientY - y )
+                            })
+                            break;
+                        default :
+                            var xt = t + ( ev.clientY - y );
+                            var xl = l + ( ev.clientX - x );
+                            if(xt < 0){
+                                xt = 0;
+                            };
+                            if( xt > $(window).height()-h){
+                                xt = $(window).height()-h
+                            };
+                            if(xl < 0){
+                                xl = 0;
+                            };
+                            if( xl > $(window).width()-w){
+                                xl = $(window).width()-w
+                            };
+                            obj.css({
+                                "top" : xt,
+                                "left" : xl
+                            });
+                    }
+                    return false;
+                });
+                that.$element.on("mouseup.drag",function(){
+                    that.$element.css({
+                        "cursor" : "default"
+                    })
+                    that.$element.off("mousemove.drag").off("mouseup.drag");
+                });
+            })
+        }
+    }
   Modal.prototype.resetAdjustments = function () {
     this.$element.css({
       paddingLeft: '',
@@ -1187,6 +1320,7 @@ if (typeof jQuery === 'undefined') {
     this.originalBodyPad = document.body.style.paddingRight || ''
     if (this.bodyIsOverflowing) this.$body.css('padding-right', bodyPad + this.scrollbarWidth)
   }
+
 
   Modal.prototype.resetScrollbar = function () {
     this.$body.css('padding-right', this.originalBodyPad)
