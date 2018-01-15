@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uploadify</title>
+    <link rel="stylesheet" href="../javaScripts/uploadify.css">
+    <style>
+        .some-class{
+            display: inline-block;
+            background-color: red;
+            margin-right: 0;
+            margin-top:-22px;
+        }
+    </style>
+</head>
+<body>
+<p style="width: 800px; height: 30px; line-height: 30px;">
+    <span style="width: 100px; height: 30px; display: inline-block; border:1px solid red;"></span>
+    <input name="file_upload" id="file_upload">
+    <span style="width: 100px; height: 30px; display: inline-block; border:1px solid red;"></span>
+</p>
+
+<script src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>
+<script src="../javaScripts/jquery.uploadify.js"></script>
+<script>
+    $(function() {
+        $('#file_upload').uploadify({
+            height: 30,
+            swf           : '../uploadify/uploadify.swf',
+            uploader      : '../uploadify/uploadify.php',
+            width         : 120
+        });
+    });
+</script>
+</body>
+</html>
