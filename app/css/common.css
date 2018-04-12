@@ -41,6 +41,10 @@ a,
 input {
     outline: none;
 }
+input, input[type='text']:focus, input[type='text']:hover{
+    outline: none;
+    border:1px solid #bfbcbc;
+}
 a {
     text-decoration: none !important;
     outline-style: none !important;
@@ -57,10 +61,12 @@ i{
 }
 button,input[type=button]{
     border:none;
+    padding:2px 7px;
 }
 button,input[type=button]:focus{
     border:none;
     outline: none;
+
 }
 .fl{float:left;}
 .fr{float:right;}
