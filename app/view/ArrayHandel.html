@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组操作</title>
+    <script>
+        var arr1=[
+            {name:'张三',age:18},
+            {name:'李四',age:28}
+        ];
+        var arr2=['张三','李四'];
+        var arr3=[
+            {name:'小红',age:23},
+            {name:'小明',age:23}
+        ];
+        var arr4=['小红','小明'];
+        /*
+        * nameStr 是自己拼装的str
+        * newArr  返回来的是一个数组
+        * 用join 转换成字符串，可以省去自己拼接时逗号的问题
+        * */
+        console.log(arr2.join(','));
+        console.log(arr1.join(','));
+        var nameStr="";
+        var newArr = arr1.map(function (item,i) {
+            console.log(i);
+            console.log(item);
+            nameStr+=item.name;
+            return item.name;
+        });
+        console.log(newArr);
+        console.log(newArr.join(','));
+
+        /**
+         * for in 循环 遍历数组和字符串和对象
+         * 遍历数组  index 为字符串 不能进行几何运算
+         * 遍历字符串  index为数字
+         * 遍历对象  遍历出的结果为 key 和 value   for  in 更适合遍历对象
+         * */
+        for(var i in arr1){
+            console.log(arr1[i],i);
+        }
+        for(var i in nameStr){
+            console.log(nameStr[i],i);
+        }
+        for(var key in arr1[0]){
+            console.log(i,arr1[0][key])
+        }
+
+        /**
+         * for of 循环遍历数组
+         * item 为每个数组中的项
+         * */
+        for(var item of arr1){
+            console.log(item)
+        }
+
+        /**
+         *filter 过滤数组
+         */
+        var listFilter = arr1.filter(item => item.age > 20)
+        console.log(listFilter);
+
+        /**
+         * concat 合并数组
+         * */
+        var listConcat = arr1.concat(arr3);
+        console.log(listConcat);
+        var listConcat2 = arr2.concat(arr4);
+        console.log(listConcat2);
+
+        /*
+        * pop 删除最后一个元素 会改变原数组  返回已经删除的数据
+        * shift  删除第一个元素
+        * */
+        var listPop = arr2.pop();
+        console.log(listPop, arr2);
+
+        /**
+         * push 在数组最后面插入一条数据 返回插入后数组的length
+         * unshift  在数组的最开始插入提条数据
+         * */
+        var listPush = arr1.push({name:'王',age:5});
+        console.log(listPush, arr1);
+
+        /**
+         * sort 对数组进行排序  a-b 为正序   b-a 为倒序
+         * */
+        var listSort = arr1.sort(function (a,b) {
+            return a.age-b.age;
+        });
+        console.log(listSort);
+        /**
+         * slice 对数组进行截取  截取时要注意下标是从小到大，下表示从0开始
+         * */
+        console.log("-------------slice----------------");
+        console.log(arr1);
+        console.log(arr1.slice(0,1));   //截取从第0个开始到第一个结束
+        console.log(arr1.slice(2));     //截取从第三个开始到最后一个
+        console.log(arr1.slice(0,-1));  //截取从第0个开始到从后面数一个
+        /**
+         * splice 向数组中添加或是删除元素
+         * */
+        console.log("-------------splice----------------");
+        arr4.splice(2,0,'小涛');        //从第二个位置删除0个插入一个小涛
+        console.log(arr4);
+        arr4.splice(2,1,{name:'小涛',age:21});   //从第二个位置删除一个 插入一个小涛
+        console.log(arr4);
+        arr4.splice(1,1);                     //从第一个位置删除一个不进行插入
+        console.log(arr4);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
