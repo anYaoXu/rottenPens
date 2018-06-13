@@ -1,10 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> 圆环 </title>
+    <style>
+        .circle_bg{
+            width:200px;
+            height:200px;
+            border:18px solid #999999;
+            border-radius:50%;
+        }
+        .wrapper{
+            width: calc(100px + 18px);
+            background-color:transparent;
+            height: calc(200px + 18px*2);
+            margin-top: -18px;
+            position: relative;
+            top:0;
+            float:left;
+            overflow:hidden;
+        }
+        .left{
+            margin-left: -18px;
+
+        }
+        .right{
+            margin-right: -18px;
+
+        }
+        .numVal{
+            position:relative;
+            top:-65%;
+            left:45%;
+        }
+        .circle_right{
+            width:200px;
+            height:200px;
+            border:calc(20px - 2px) solid transparent;
+            border-top:calc(20px - 2px) solid green;
+            border-right:calc(20px - 2px) solid green;
+            margin-left: calc(-100px - 18px);
+            border-radius:50% ;
+            -webkit-transform: rotate(-135deg);
+            border-top-color: #00b3ee;
+            border-right-color: #00b3ee;
+        }
+
+        .circle_left{
+            width:200px;
+            height:200px;
+            border:calc(20px - 2px) solid transparent;
+            border-left:calc(20px - 2px) solid green;
+            border-bottom:calc(20px - 2px) solid green;
+            border-radius:50%;
+            -webkit-transform: rotate(-135deg);
+            border-bottom-color: #00b3ee;
+            border-left-color: #00b3ee;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class = "circle_bg" >
+    <div class = "wrapper left" >
+        <div class = "circle_left" id="left"></div>
+    </div>
+    <div class = "wrapper right" >
+        <div class = "circle_right" id="right"></div>
+    </div>
+    <div class = "numVal" id="numVal">0%</div>
+</div>
+<div>
+    <div>改变颜色：</div>
+    <div onClick="changeColor('red')">red</div>
+    <div onClick="changeColor('green')">green</div>
+    <div onClick="changeColor('yellow')">yellow</div>
+    <div onClick="changeColor('blue')">blue</div>
+</div>
+<div>
+    <div>改变值：</div>
+    <div onClick="changeValue(10)">10</div>
+    <div onClick="changeValue(25)">25</div>
+    <div onClick="changeValue(40)">40</div>
+    <div onClick="changeValue(80)">80</div>
+</div>
+<!--<script type="application/javascript" src="../javaScripts/jqueryJs/jquery-3.1.1.min.js"></script>-->
+<script>
+    //改变颜色
+    function changeColor(curColor){
+//        $(".circle_right").css("border-top-color",curColor);
+//        $(".circle_right").css("border-right-color",curColor);
+//        $(".circle_left").css("border-left-color",curColor);
+//        $(".circle_left").css("border-bottom-color",curColor);
+
+
+        document.getElementById('left').style.borderLeftColor=curColor;
+        document.getElementById('left').style.borderBottomColor=curColor;
+        document.getElementById('right').style.borderTopColor=curColor;
+        document.getElementById('right').style.borderRightColor=curColor;
+    }
+    //改变值
+    function changeValue(curValue){
+        var rightVal;
+        var leftVal;
+        if(curValue<=50){
+            rightVal=-135+(parseFloat(180)/parseFloat(50))*parseFloat(curValue);
+            leftVal=-135;
+        }else if(curValue>50&&curValue<=100){
+            rightVal=45;
+            leftVal=-135+(parseFloat(180)/parseFloat(50))*parseFloat(curValue-50);
+//            $(".circle_right").css("-webkit-transform","rotate("+rightVal+"deg)");
+//            $(".circle_left").css("-webkit-transform","rotate("+leftVal+"deg)");
+        }
+        document.getElementById('left').style.webkitTransform="rotate("+leftVal+"deg)";
+        document.getElementById('right').style.webkitTransform="rotate("+rightVal+"deg)";
+//        $(".numVal").html(curValue+"%");
+        document.getElementById('numVal').innerHTML=curValue+"%";
+    }
+</script>
 </body>
 </html>

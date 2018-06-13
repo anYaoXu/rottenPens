@@ -15,18 +15,26 @@ var data=[
     {name: '湖州市', value: [107.615944, 27.479744, 2],img:'s-success.png'}
 ]
 
-$.get('../dist/33.json', function (usaJson) {
+$.get('../dist/china.json', function (usaJson) {
     myChart.hideLoading();
-    echarts.registerMap('浙江', usaJson);
+    echarts.registerMap('中国', usaJson);
 
     option = {
         title: {
-            text: '浙江省地图',
+            text: '中国地图',
             subtext: '',
             sublink: '',
             left: 'center'
         },
-        tooltip: {
+        // backgroundColor:'red',
+        /*backgroundColor: new echarts.graphic.RadialGradient(0.5, 0.5, 0.4, [{
+            offset: 0,
+            color: '#4b5769'
+        }, {
+            offset: 1,
+            color: '#404a59'
+        }]),*/
+        /*tooltip: {
             trigger: 'item',
             showDelay: 0,
             transitionDuration: 1,
@@ -36,19 +44,29 @@ $.get('../dist/33.json', function (usaJson) {
                 // return params.seriesName + '<br/>' + params.name + ': ' + value;
                 return params.name + ': ' + value + '<br/>'+'<img src="../images/4.jpg" width="50" alt="">'
             }
-        },
+        },*/
+        tooltip: false,
         series: [
             {
-                name: '浙江省',
+                name: '中国',
                 type: 'map',
-                map: '浙江',
+                map: '中国',
                 data: data,
                 itemStyle:{
-                    normal:{
-                        label:{show:false}
+                    normal: {
+                        label: {
+                            show: false,
+                            // color: '#ffdf33',
+                            fontSize: '10px',
+                            // backgroundColor: '#bde8fa'
+                        },
+                        // areaColor:'#bde8fa',  //地图区域颜色
+
                     }
                 }
+
             }
+
         ]
     };
 
