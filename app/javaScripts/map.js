@@ -26,7 +26,7 @@ $.get('../dist/33.json', function (usaJson) {
             sublink: '',
             left: 'center'
         },
-        tooltip: {
+        /*tooltip: {
             trigger: 'item',
             showDelay: 0,
             transitionDuration: 1,
@@ -36,7 +36,7 @@ $.get('../dist/33.json', function (usaJson) {
                 // return params.seriesName + '<br/>' + params.name + ': ' + value;
                 return params.name + ': ' + value + '<br/>'+'<img src="../images/4.jpg" width="50" alt="">'
             }
-        },
+        },*/
         series: [
             {
                 name: '浙江省',
