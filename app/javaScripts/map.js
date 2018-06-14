@@ -26,7 +26,7 @@ $.get('../dist/33.json', function (usaJson) {
             sublink: '',
             left: 'center'
         },
-        /*tooltip: {
+        tooltip: {
             trigger: 'item',
             showDelay: 0,
             transitionDuration: 1,
@@ -36,7 +36,7 @@ $.get('../dist/33.json', function (usaJson) {
                 // return params.seriesName + '<br/>' + params.name + ': ' + value;
                 return params.name + ': ' + value + '<br/>'+'<img src="../images/4.jpg" width="50" alt="">'
             }
-        },*/
+        },
         series: [
             {
                 name: '浙江省',
@@ -46,6 +46,22 @@ $.get('../dist/33.json', function (usaJson) {
                 itemStyle:{
                     normal:{
                         label:{show:false}
+                    }
+                },
+                renderItem: function (params, api) {//具体实现自定义图标的方法
+                    return {
+                        type: 'image',
+                        style: {
+                            image: "s-success.png",
+                            x: api.coord([
+                                data[params.dataIndex].value[0], data[params.dataIndex]
+                                    .value[1]
+                            ])[0],
+                            y: api.coord([
+                                data[params.dataIndex].value[0], data[params.dataIndex]
+                                    .value[1]
+                            ])[1]
+                        }
                     }
                 }
             }

@@ -1,6 +1,3 @@
-var myChart = echarts.init(document.getElementById('echartMap'));
-myChart.showLoading();
-
 var data=[
     {name: '丽水市', value: [119.49105224609375, 28.24937385955666, 2],img:'s-success.png'},
     {name: '杭州市', value: [107.615944, 27.479744, 2],img:'s-success.png'},
@@ -13,62 +10,53 @@ var data=[
     {name: '绍兴市', value: [107.615944, 27.479744, 2],img:'s-success.png'},
     {name: '嘉兴市', value: [107.615944, 27.479744, 2],img:'s-success.png'},
     {name: '湖州市', value: [107.615944, 27.479744, 2],img:'s-success.png'}
-]
-
-$.get('../dist/china.json', function (usaJson) {
-    myChart.hideLoading();
-    echarts.registerMap('中国', usaJson);
-
-    option = {
-        title: {
-            text: '中国地图',
-            subtext: '',
-            sublink: '',
-            left: 'center'
-        },
-        // backgroundColor:'red',
-        /*backgroundColor: new echarts.graphic.RadialGradient(0.5, 0.5, 0.4, [{
-            offset: 0,
-            color: '#4b5769'
-        }, {
-            offset: 1,
-            color: '#404a59'
-        }]),*/
-        /*tooltip: {
-            trigger: 'item',
-            showDelay: 0,
-            transitionDuration: 1,
-            formatter: function (params) {
-                var value = (params.value + '').split('.');
-                value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-                // return params.seriesName + '<br/>' + params.name + ': ' + value;
-                return params.name + ': ' + value + '<br/>'+'<img src="../images/4.jpg" width="50" alt="">'
-            }
-        },*/
-        tooltip: false,
-        series: [
-            {
-                name: '中国',
-                type: 'map',
-                map: '中国',
-                data: data,
-                itemStyle:{
-                    normal: {
-                        label: {
-                            show: false,
-                            // color: '#ffdf33',
-                            fontSize: '10px',
-                            // backgroundColor: '#bde8fa'
-                        },
-                        // areaColor:'#bde8fa',  //地图区域颜色
-
-                    }
+];
+var myChart = echarts.init(document.getElementById('echartMap'));
+var option = {
+    title: {
+        text: '全国地图',
+        subtext: '',
+        sublink: '',
+        left: 'center'
+    },
+    series: [{
+        type: 'custom',//配置显示方式为用户自定义
+        coordinateSystem: 'geo',
+        renderItem: function (params, api) {//具体实现自定义图标的方法
+            return {
+                type: 'image',
+                style: {
+                    image:  data[params.dataIndex].img,
+                    x: api.coord([
+                        data[params.dataIndex].value[0], data[params.dataIndex]
+                            .value[1]
+                    ])[0],
+                    y: api.coord([
+                        data[params.dataIndex].value[0], data[params.dataIndex]
+                            .value[1]
+                    ])[1]
                 }
-
             }
-
-        ]
-    };
-
-    myChart.setOption(option);
-});
+        },
+        data: data
+    }
+    ],
+    geo: {
+        map: '全国',
+        roam: true,
+        zoom: 1,
+        itemStyle: {
+            normal: {
+                label:{show:true},
+                // borderColor: '#387ba7',
+                // shadowColor: 'rgba(0, 0, 0, 0.5)',
+                // shadowBlur: 10,
+                // shadowOffsetX: 10
+            },
+            emphasis: {
+                // areaColor: '#b3f3f3'
+            }
+        }
+    }
+};
+myChart.setOption(option);
