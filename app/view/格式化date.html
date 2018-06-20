@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function formatDate(date) {
+        const year = date.getFullYear()
+        const month = date.getMonth() + 1
+        const day = date.getDate()
+        const hour = date.getHours()
+        const minute = date.getMinutes()
+        const second = date.getSeconds()
+        console.log([year, month, day].map(formatNumber));
+        console.log([year, month, day].map(formatNumber).join('/'))
+        return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+    }
+
+    function formatNumber(n) {
+        n = n.toString();
+        return n[1] ? n : '0' + n
+    }
+
+    var aa = formatDate(new Date())
+    console.log(aa);
+</script>
+</html>
