@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>三角形</title>
+    <style>
+        .triangle-up {
+            width: 0;
+            height: 0;
+            border-left: 90px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 50px solid red;
+            position: relative;
+        }
+
+        .triangle-up:before {
+            content: '';
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .triangle_border_up {
+            width: 0;
+            height: 0;
+            border-width: 0 30px 30px;
+            border-style: solid;
+            border-color: transparent transparent #333; /*透明 透明  灰*/
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .triangle_border_up:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-width: 0 30px 30px 30px;
+            border-style: solid;
+            border-color: transparent transparent #fc0; /*透明 透明  黄*/
+            position: absolute;
+            top: 0px;
+            left: -30px;
+        }
+
+        /*向左*/
+        .triangle_border_left {
+            width: 0;
+            height: 0;
+            border-width: 30px 30px 30px 0;
+            border-style: solid;
+            border-color: transparent #333 transparent transparent; /*透明 灰 透明 透明 */
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .triangle_border_left span {
+            display: block;
+            width: 0;
+            height: 0;
+            border-width: 28px 28px 28px 0;
+            border-style: solid;
+            border-color: transparent #fc0 transparent transparent; /*透明 黄 透明 透明 */
+            position: absolute;
+            top: -28px;
+            left: 1px;
+        }
+
+        .triangle_border_nw {
+            width: 0;
+            height: 0;
+            border-width: 30px 30px 0 0;
+            border-style: solid;
+            border-color: #6c6 transparent transparent transparent;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .triangle_border_nw_1 {
+            width: 0;
+            height: 0;
+            border-width: 0 0 30px 30px;
+            border-style: solid;
+            border-color: transparent transparent transparent #6c6;
+            margin: 40px auto;
+            position: relative;
+        }
+        .triangle_border_nw_2 {
+            width: 0;
+            height: 0;
+            border-width: 0 30px 30px 30px;
+            border-style: solid;
+            border-color: transparent transparent #6c6 transparent;
+        }
+
+        .triangle_border_nw_3 {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 30px 0 0 30px;
+            border-color: #6c6 transparent transparent transparent;
+        }
+
+        .rectangle1{
+            width: 80px;
+            height: 40px;
+            background-color: #6c6;
+            position: relative;
+            float: left;
+            border-radius: 4px 0 0 4px;
+        }
+        .triangle1{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 0 20px 20px;
+            border-color: transparent transparent transparent #6c6;
+            position: absolute;
+            top:0;
+            right: -20px;
+        }
+        .rectangle1:hover{
+            background-color: #CCC43F;
+        }
+        .rectangle1:hover .triangle1{
+            border-color: transparent transparent transparent #CCC43F;
+        }
+        .rectangle2{
+            width: 120px;
+            height: 40px;
+            background-color: #6c6;
+            position: relative;
+            margin-left: 25px;
+            float: left;
+            border-radius: 0 4px 4px 0;
+        }
+        .triangle2{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 0 0 20px;
+            border-color: #6c6 transparent transparent transparent;
+            position: absolute;
+            top:0;
+            left: -20px;
+        }
+        .triangle3{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 20px 20px;
+            border-color: transparent transparent #6c6 transparent;
+            position: absolute;
+            bottom:0;
+            left: -20px;
+        }
+        .rectangle2:hover{
+            background-color: #CCC43F;
+        }
+        .rectangle2:hover  .triangle2{
+            border-color: #CCC43F transparent transparent transparent;
+        }
+        .rectangle2:hover  .triangle3{
+            border-color: transparent transparent #CCC43F transparent;
+        }
+        .rectangle3{
+            width: 120px;
+            height: 40px;
+            background-color: #6c6;
+            position: relative;
+            margin-left: 25px;
+            float: left;
+            border-radius: 0 4px 4px 0;
+        }
+        .rectangle3:hover{
+            background-color: #CCC43F;
+        }
+        .rectangle3:hover .triangle2{
+            border-color: #CCC43F transparent transparent transparent;
+        }
+        .rectangle3:hover  .triangle3{
+            border-color: transparent transparent #CCC43F transparent;
+        }
+        .rectangle3:hover .triangle1{
+            border-color: transparent transparent transparent #CCC43F;
+        }
+    </style>
+</head>
+<body>
+<div class="triangle-up"></div>
+<div class="triangle_border_up">
+    <!--<span></span>-->
+</div>
+
+<div class="triangle_border_left">
+    <span></span>
+</div>
+
+
+<div class="triangle_border_nw"></div>
+<div class="triangle_border_nw_1"></div>
+
+
+<div class="triangle_border_nw_2"></div>
+<br>
+<div class="triangle_border_nw_3"></div>
+<br>
+
+<div>
+    <div class="rectangle1">
+        <span class="triangle1"></span>
+    </div>
+
+    <div class="rectangle3">
+        <span class="triangle2"></span>
+        <span class="triangle3"></span>
+        <span class="triangle1" style="right: -19px"></span>
+    </div>
+
+    <div class="rectangle2">
+        <span class="triangle2"></span>
+        <span class="triangle3"></span>
+    </div>
+</div>
+<p>边长的有没有 配合边长的颜色（是否是透明）组成三角形</p>
+<p>边长的长度  决定是否是规则三角形</p>
+<p>有值 对应透明度  反应出一个斜边</p>
+</body>
+</html>
