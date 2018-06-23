@@ -45,16 +45,11 @@ var option = {
         map: '全国',
         roam: true,
         zoom: 1,
+        label: {show: true},
         itemStyle: {
-            normal: {
-                label:{show:true},
-                // borderColor: '#387ba7',
-                // shadowColor: 'rgba(0, 0, 0, 0.5)',
-                // shadowBlur: 10,
-                // shadowOffsetX: 10
-            },
+            areaColor: '#b1d0ec',
             emphasis: {
-                // areaColor: '#b3f3f3'
+                areaColor: 'white',
             }
         }
     }
