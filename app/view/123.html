@@ -1,71 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <style>
-    #wrap{
-        width: 1000px;
-      height: 300px;
-    }
-    #wrap > div{
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border:1px solid #cfd2d8;
-      float: left;
-      text-align: center;
-      line-height: 100px;
-      color:#cfd2d8;
-      font-size: 100px;
-      position: relative;
-      font-family: 宋体;
-    }
-    .divInfo{
-      width: 80px;
-      height: 30px;
-      background: #fff;
-      position: absolute;
-      top:50%;
-      margin-top:-15px;
-      left: 50%;
-      margin-left: -40px;
-      font-size: 18px;
-      line-height: 30px;
-    }
-    .blueBC{
-      border:1px solid #1b9dd1 !important;
-      color:#1b9dd1 !important;
-    }
-    .blueC{
-      color:#1b9dd1;
-    }
-    hr{
-      display: inline-block;
-      width: 100px;
-      margin:50px 10px;
-      float:left;
-      border:none;
-      border-top:1px solid #cfd2d8;
-    }
-    hr.colorb{
-      border-top:1px solid #1b9dd1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap {
+            width: 1000px;
+            height: 300px;
+        }
+
+        #wrap > div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid #cfd2d8;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            color: #cfd2d8;
+            font-size: 100px;
+            position: relative;
+            font-family: 宋体;
+        }
+
+        .divInfo {
+            width: 80px;
+            height: 30px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            left: 50%;
+            margin-left: -40px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .blueBC {
+            border: 1px solid #1b9dd1 !important;
+            color: #1b9dd1 !important;
+        }
+
+        .blueC {
+            color: #1b9dd1;
+        }
+
+        hr {
+            display: inline-block;
+            width: 100px;
+            margin: 50px 10px;
+            float: left;
+            border: none;
+            border-top: 1px solid #cfd2d8;
+        }
+
+        hr.colorb {
+            border-top: 1px solid #1b9dd1;
+        }
+    </style>
 </head>
 <body>
 <div id="wrap">
-  <div class="blueBC">1
-    <div class="divInfo">基本信息</div>
-  </div>
-  <hr class="colorb">
-  <div>2
-    <div class="divInfo">媒体信息</div>
-  </div>
-  <hr>
-  <div>3
-    <div class="divInfo">方案信息</div>
-  </div>
+    <div class="blueBC">1
+        <div class="divInfo">基本信息</div>
+    </div>
+    <hr class="colorb">
+    <div>2
+        <div class="divInfo">媒体信息</div>
+    </div>
+    <hr>
+    <div>3
+        <div class="divInfo">方案信息</div>
+    </div>
 </div>
+<script>
+    function getHref(url,arg1) {
+        var href = url ? url : window.location.href;
+        var hrefList = href.split('?');
+        if (hrefList[0] === href) {
+            return "";
+        }
+        var obj = {};
+        var arr = hrefList[1].split('&');
+        for (var i = 0; i < arr.length; i++) {
+            var arg = arr[i].split('=');
+            var s = arg[0];
+            obj[s] = arg[1];
+        }
+        return obj[arg1];
+    }
+    name = getHref("www.baidu.com?name=1&age=1", 'name');
+    console.log(name);
+
+</script>
 </body>
 </html>
