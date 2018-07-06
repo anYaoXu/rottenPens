@@ -69,5 +69,28 @@
 <div class="box">
     <div id="child1">呆呆今天退役了(。﹏。)</div>
 </div>
+
+<script>
+    var str = '12ddddddgvsdfdsfsseaadvadsd';
+    var json = {};
+    for(var i = 0; i< str.length; i++){
+        if(!json[str.charAt(i)]){
+            json[str.charAt(i)] = 1
+        }else{
+            json[str.charAt(i)]++;
+        }
+    }
+    var s;
+    var num = 0;
+    for(var i in json) {
+        if(json[i] > num){
+            num = json[i];
+            s = i
+        }
+    }
+    console.log(json);
+    console.log("出现最多的字母是："+ s +", 出现的次数是：" + num);
+</script>
+
 </body>
 </html>
