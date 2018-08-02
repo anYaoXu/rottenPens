@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS闭包</title>
+</head>
+<body>
+<div id="wrap">
+    <p></p>
+</div>
+</body>
+<script>
+    var person = function () {
+        //变量作用域为函数内部，外部无法访问
+        var name = "default";
+
+        return {
+            getName: function () {
+                return name;
+            },
+            setName: function (newName) {
+                name = newName;
+            }
+        }
+    }();
+    console.log(person.name);//直接访问，结果为undefined
+    console.log(person.getName());
+    person.setName("abruzzi");
+    console.log(person.getName());
+
+    //    function f1(){
+    //        var name = 'abc';
+    //        function f2(){
+    //            alert(name);
+    //        }
+    //        return f2
+    //    }
+    //
+    //    var a = f1();
+    //    a();
+
+
+    function createFunctions() {
+        var result = new Array();
+        for (var i = 0; i < 10; i++) {
+            result[i] = function () {
+                return i;
+            };
+        }
+        return result;
+    }
+
+    var funcs = createFunctions();
+    for (var i = 0; i < funcs.length; i++) {
+        console.log(funcs[i]());
+    }
+
+    //var counter = (function() {
+    //    var privateCounter = 0;
+    //    function changeBy(val) {
+    //        privateCounter += val;
+    //    }
+    //    return {
+    //        increment: function() {
+    //            changeBy(1);
+    //        },
+    //        decrement: function() {
+    //            changeBy(-1);
+    //        },
+    //        value: function() {
+    //            return privateCounter;
+    //        }
+    //    };
+    //})();
+    //console.log(counter.value()); // logs 0
+    //counter.increment();
+    //counter.increment();
+    //console.log(counter.value()); // logs 2
+    //counter.decrement();
+    //console.log(counter.value()); // logs 1
+
+    var obj = {
+        varb: 456,
+        funca: function () {
+            self = this;
+            console.log(self.varb);
+        }
+    };
+
+    (function (a) {
+        a.funca();
+        console.log(a.varb);
+    })(obj);
+
+    (function(a){
+        console.log(a);
+    })('123')
+
+    //自执行函数
+    //后面带小括号    （）表示立即执行    如果不写小括号后面会报语法错误()
+    //小括号里面      （）是传的参数  如果不需要可以不写
+
+</script>
+</html>
