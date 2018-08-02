@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象程编程</title>
+</head>
+<body>
+
+
+<script>
+/*     function Person(name,age){
+        this.name=name;
+        this.age=age;
+        this.say=function(content){
+            //在类中，访问类自身的属性，必须使用this.属性调用。
+            alert("我叫"+this.name+",今年"+this.age+"岁,我说了一句话："+content);
+        }
+    }
+    var zhangsan=new Person("张三",18);
+    zhangsans.say("你好呀"); */
+
+
+
+function Person(name,age1){
+    this.name=name;
+//  this.age=age;
+    var age=0;
+                 
+    this.setAge=function(ages){
+        if(ages>0&&ages<=120){
+            age=ages;
+        }else{
+            alert("年龄赋值失败");
+        }
+    }
+// 当实例化类拿到对象时，可以直接通过类名的()传入年龄，设置私有属性
+   if(age1!=undefined) this.setAge(age1);
+   this.getAge=function(){
+       return age;
+   }
+   this.sayTime=function(){
+       alert("我说当前时间是："+getTime());
+   }
+   this.writeTime=function(){
+       alert("我写了当前时间是："+getTime());
+   }
+                
+/*私有化的方法，只能在类内部被其他方法调用，而不能对外提供功能。这就是方法的封装*/
+   function getTime(){
+       return new Date();
+   }
+}
+            
+            debugger;
+var zhangsan=new Person("张三",99);
+alert("张三的年龄是"+zhangsan.getAge());
+zhangsan.setAge(100);
+alert("张三的年龄是"+zhangsan.getAge());
+            
+var lisi=new Person("李四",99);
+lisi.setAge(110);
+alert("李四的年龄是:"+lisi.getAge());
+lisi.sayTime();
+
+
+</script>
+
+</body>
+</html>
