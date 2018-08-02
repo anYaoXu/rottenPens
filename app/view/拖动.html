@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖动</title>
+    <style>
+        #wrap {
+            width: 350px;
+            border: 1px solid red;
+            padding-top: 295px;
+            position: relative;
+            border-top: none;
+        }
+
+        .weekbox {
+            height: 5px;
+            border-right: 1px solid red;
+            float: left;
+            text-align: right;
+        }
+
+        .w-2 {
+            width: 101px;
+        }
+
+        .w-4 {
+            width: 101px;
+        }
+
+        .w-6 {
+            width: 101px;
+        }
+
+        .hr {
+            width: 1px;
+            height: 300px;
+            border-right: 1px solid green;
+            position: absolute;
+            top: 0;
+            left: 100px;
+        }
+
+        .hr:hover {
+            border-right: 2px solid green;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+<div id="title"></div>
+<div id="main"></div>
+<div id="wrap">
+    <div class="weekbox w-2">2周</div>
+    <div class="weekbox w-4">4周</div>
+    <div class="weekbox w-6">6周</div>
+    <div class="hr" id="myhr">
+    </div>
+</body>
+<script>
+    var hr = document.getElementById("myhr");
+    hr.onmousedown = function (e) {
+        var disX = e.clientX - hr.offsetLeft;
+        console.log(disX);
+        var leftX;
+        document.onmousemove = function (e) {
+            e = e ? e : window.event;
+            leftX = e.clientX - disX;
+            if(leftX > 300){
+                leftX = 300
+            }else if(leftX < 100){
+                leftX = 100;
+            }
+            hr.style.left = leftX + "px";
+        };
+        document.onmouseup = function () {
+            if(leftX< 150){
+               leftX = 100;
+            }else if(leftX >= 150 && leftX < 250){
+                leftX = 202;
+            }else if(leftX >= 250 && leftX < 300){
+                leftX = 304;
+            }
+            hr.style.left = leftX + "px";
+            document.onmousemove = null;
+        };
+        return false;
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #divTest {
+            width : 200px;
+            height : 200px;
+            background-color : red;
+            border : 1px solid #00ffff;
+            position : absolute;
+        }
+    </style>
+</head>
+<body>
+测试一下
+<div id="divTest">
+</div>
+
+<script type="text/javascript">
+    var oDiv = document.getElementById("divTest");
+    oDiv.onmousedown = function (en) {
+        var ev = ev || event;
+        var disX = en.clientX - oDiv.offsetLeft;
+        var disY = en.clientY - oDiv.offsetTop;
+//        if (oDiv.setCapture) {
+//            oDiv.setCapture();
+//        }
+
+        document.onmousemove = function (en) {
+            var ev = ev || event;
+            oDiv.style.top = en.clientY - disY + 'px';
+            oDiv.style.left = en.clientX - disX + 'px';
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+//            if (oDiv.releaseCapture) {
+//                oDiv.releaseCapture()
+//            }
+        }
+//        return false;//阻止默认行为（如果页面中有文字，则会默认拖动文字），ie8及一下不行
+    }
+</script>
+
+</body>
+</html>
