@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call和Apply</title>
+</head>
+<body>
+
+</body>
+<script>
+    //相同点 都会改变 this的指向
+    //apply会将数组转换成一个参数接一个参数的传递给方法
+    var array = [1, 2, 3, 4, 5, 7, 6];
+    var maxValue = Math.max.apply(null, array);
+    console.log(maxValue);
+
+    var list1 = ['a', 'b', 'c'];
+    var list2 = ['d', 'e', 'f'];
+    Array.prototype.push.apply(list1, list2);  //直接修改list1  将list2一个一个的push进list1
+    console.log(list1);
+
+
+    var obj1 = {
+        name:'刘备'
+    };
+
+    var obj2 = {
+        name:'曹操'
+    };
+    var getName = function(){
+        alert(this.name);
+    };
+
+    window.name = '三国';
+    getName();//弹出"三国"
+    getName.apply(obj1);//弹出"刘备"na
+    getName.call(obj2);//弹出"曹操"
+
+
+    function Class1() {
+        this.name = "class1";
+        this.showNam = function () {
+            alert(this.name);
+        }
+    }
+
+    function Class2(name) {
+        this.name = name;
+    }
+
+    var c1 = new Class1();
+    var c2 = new Class2('class2');
+    c1.showNam.call(c2);    //c2 执行 c1.showNam  alert（class2） c2 本身没有showNam 方法  执行c1 的 但是 name是c2 的
+
+
+
+    function Class3()
+    {
+        this.showTxt = function(txt)
+        {
+            alert(txt);
+        }
+    }
+    function Class4()
+    {
+        Class3.call(this);
+    }
+    var c4 = new Class4();
+    c4.showTxt("cc");   //用call 实现继承
+</script>
+</html>
