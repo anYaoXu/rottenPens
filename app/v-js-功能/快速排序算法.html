@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
+    <title>快速排序方法</title>
 </head>
-
 <body>
-<div id="wrap">
 
-</div>
+</body>
 <script>
     var quickSort = function (arr) {
         if (arr.length <= 1) return arr;
@@ -26,41 +22,8 @@
             }
         }
         return quickSort(left).concat([centerValue], quickSort(right));
-    }
+    };
     var arr = quickSort([0, 1, 3, 2]);
     console.log(arr);
-    localStorage.setItem('A', 'SSS');
-    sessionStorage.setItem('B', 'ssss');
-
-    document.cookie = "name1 = 'xiaoming'";
-
-    var obj = {
-        a: 1,
-        b: 2,
-        c: 3
-    };
-    for (o in obj) {
-        console.log(o + ' = ' + obj[o])
-    }
-
-    var str = 'qqwertyuio';
-    console.log(str);
-    for (s in str) {
-        console.log('第' + s + '个字符是：' + str[s]);
-    }
-
-    console.log(Object.keys(obj));    //拿到属性的集合
-
-
-
-    var a = [];
-    for (var i = 0; i < 10; i++) {
-        a[i] = function () {
-            console.log(i);
-        };
-    }
-
 </script>
-</body>
-
 </html>
