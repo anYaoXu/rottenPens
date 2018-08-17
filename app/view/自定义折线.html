@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义折线</title>
+</head>
+<body>
+    <div style="width: 500px; height: 100px">
+        <canvas id="canvas" width="500" height="100"></canvas>
+    </div>
+</body>
+<script>
+
+    var num = [2, 20, 30, 40, 80];
+    var m_x;
+    var d = document.getElementById('canvas');
+    var ctx = d.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(0,100);
+
+    for(var i =0; i<num.length; i++){
+        var x = i  * 30;
+        var y = 100 - num[i];
+        ctx.lineTo(x, y);
+        m_x = x;
+    }
+
+    ctx.lineTo(m_x, 100);
+    const imgObj = new Image();
+
+    ctx.closePath();
+//    ctx.fill();
+    ctx.stroke();
+    imgObj.src = "../images/1.jpg";
+    imgObj.onload = function () {
+        ctx.drawImage(imgObj, 0, 0);
+
+    }
+</script>
+</html>
