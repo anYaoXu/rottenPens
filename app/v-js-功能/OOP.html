@@ -72,7 +72,9 @@
     }
 
     /*原型链实现继承*/
-
+    //共享的属性和方法放到prototype中，一个实例化出来的类改变此属性后，另一个实例化后的也需要跟这边
+    //不需要共享的放在构造函数中
+    //http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html
 
     /*构造函数+ call 或 apply 实现继承*/
     /*子类*/
