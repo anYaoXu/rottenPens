@@ -1,22 +1,32 @@
 html,
 body {
-    background: #ffffff;
-    padding: 0;
-    margin: 0;
-    font: 14px/1.5 微软雅黑;
-    overflow-x: hidden;
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
+  font: 14px/1.5 微软雅黑;
+  overflow-x: hidden;
 }
 *,
 *:before,
 *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-h1,h2,h3,h4,h5,h6,
-dl,dt,dd,
-ul,ol,li,
-th,td,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td,
 p,
 span,
 blockquote,
@@ -28,85 +38,131 @@ input,
 button,
 textarea,
 hr {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 img,
 select,
 input,
 button {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 a,
 input {
-    outline: none;
+  outline: none;
 }
-input, input[type='text']:focus, input[type='text']:hover{
-    outline: none;
-    border:1px solid #bfbcbc;
+input,
+input[type='text']:focus,
+input[type='text']:hover {
+  outline: none;
+  border: 1px solid #bfbcbc;
 }
 a {
-    text-decoration: none !important;
-    outline-style: none !important;
-    -moz-outline-style: none !important;
+  text-decoration: none !important;
+  outline-style: none !important;
+  -moz-outline-style: none !important;
 }
 ul,
 ul li,
 ol {
-    list-style: none;
+  list-style: none;
 }
-button,submit { cursor:pointer;}
-i{
-    display: inline-block;
+button,
+submit {
+  cursor: pointer;
 }
-button,input[type=button]{
-    border:none;
-    padding:2px 7px;
+i {
+  display: inline-block;
 }
-button,input[type=button]:focus{
-    border:none;
-    outline: none;
-
+button,
+input[type='button'] {
+  border: none;
+  padding: 2px 7px;
 }
-.fl{float:left;}
-.fr{float:right;}
+button,
+input[type='button']:focus {
+  border: none;
+  outline: none;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
 /**********清除浮动样式******************/
-.clearfix{ zoom:1;}  /*清除浮动*/
+.clearfix {
+  zoom: 1;
+} /*清除浮动*/
 ._clear:after {
-    display: block;
-    clear: both;
-    content: "";
-    visibility: hidden;
-    height: 0;
+  display: block;
+  clear: both;
+  content: '';
+  visibility: hidden;
+  height: 0;
 }
-table{border-collapse:collapse;}
+table {
+  border-collapse: collapse;
+}
 
 /*美化checkbox*/
 /*CheckBox 样式*/
 #checkbox input {
-    width: 1px;
-    height: 1px;
-    visibility: hidden;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
 }
 
 #checkbox label {
-    display: inline-block;
-    height: 20px;
-    background: url("../images/icon/checkbox.png") no-repeat 0 0;
-    background-size: 20px 20px;
-    padding-left: 25px;
+  display: inline-block;
+  height: 20px;
+  background: url('../images/icon/checkbox.png') no-repeat 0 0;
+  background-size: 20px 20px;
+  padding-left: 25px;
 }
 
 #checkbox input:checked + label {
-    background: url("../images/icon/checkboxed.png") no-repeat 0 0;
-    background-size: 20px 20px;
+  background: url('../images/icon/checkboxed.png') no-repeat 0 0;
+  background-size: 20px 20px;
 }
-.slh{
-    overflow: hidden; text-overflow:ellipsis; white-space: nowrap;
+.slh {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.zh{
-    /*word-wrap:break-word;*/
-    /* 只能折行 中文和英文字母会分开折行  */
-    word-break:break-all
-    /* 强制换行  中文和英文字母不会分开折行*/
+.zh {
+  /*word-wrap:break-word;*/
+  /* 只能折行 中文和英文字母会分开折行  */
+  word-break: break-all;
+  /* 强制换行  中文和英文字母不会分开折行*/
+}
+.dhslh {
+  /* 因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端 */
+  width: 200px;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
+}
+.dslh {
+  /* 兼容性更好的方式 */
+  width: 500px;
+  position: relative;
+  line-height: 1.4em;
+  /* 3 times the line-height to show 3 lines */
+  height: 4.2em;
+  overflow: hidden;
+}
+
+.dslh::after {
+  content: '...';
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 15px 1px 45px;
+  background: url(../images/icon/ellipsis_bg.png) repeat-y;
 }
