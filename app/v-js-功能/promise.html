@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>promise</title>
+  <script type="application/javascript" src="../bower_components//Jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+  <script>
+
+    var p1 = new Promise(function (resolve, reject) {
+      var usaJson = 1;
+      if (usaJson > 0) {
+        resolve(usaJson);
+      } else {
+        reject(usaJson);
+      }
+    })
+    p1.then(function (data) {
+      console.log(data);
+      return data;
+    }, function (error) {
+      return error;
+      console.log(error);
+    }).then(function (data) {
+      console.log('链式调用,此时data为：上一个then的 return 值：data = ' + data);
+    })
+
+    var p2 = new Promise(function (resolve, reject) {
+      var r = -1;
+      if (r > 0) {
+        resolve(r);
+      } else {
+        reject(r);
+      }
+    })
+    p2.then(function (data) {
+      console.log(data);
+      return data;
+    }).catch(function (error) {
+      return error;
+      console.log(error);
+    }).then(function (data) {
+      b++;
+      console.log('链式调用,此时data为：上一个then的 return 值：data = ' + data);
+    }).catch(function (error) {
+      console.log(error);
+    })
+
+    Promise.all([p1, p2]).then(function (data) {
+      console.log(data);
+    }).catch(function (error) {
+      console.log(error);
+    })
+
+    Promise.race([p1, p2]).then(function (data) {
+      console.log(data);
+    }).catch(function (error) {
+      console.log(error);
+    })
+
+    // 适用范围： 1.下一个api需要上一个api的返回值作为入参, 链式调用 then 将上一个的返回传到then 中
+    //           2.等多个api 返回结果后执行 谋块代码
+  </script>
+
+</body>
+
+</html>
