@@ -72,14 +72,15 @@
         background-color: orchid;
         padding: 20px 10px;
         width: 0; /*内容宽度超过父元素的宽度时，控制内容不会溢出*/
-        /* align-content: center; */
+        overflow-y: auto;
+        overflow-x: hidden;
       }
       .ul_1,
       .ul_2 {
         display: flex;
         flex-direction: row;
         margin-bottom: 20px;
-        height: 200px;
+        height: 100px;
         background-color: coral;
       }
       .ul_1 {
@@ -119,6 +120,24 @@
         order: 3;
         flex-basis: 100px;
         align-self: stretch;
+      }
+      .div_1 {
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+      }
+      .div_1 .left,
+      .div_1 .right {
+        display: flex;
+        flex-basis: 180px;
+        height: 100%;
+        background-color: brown;
+        flex-shrink: 0;
+      }
+      .div_1 .center_1,
+      .div_1 .center_2 {
+        display: flex;
+        flex-grow: 1;
       }
     </style>
   </head>
@@ -163,6 +182,20 @@
             <li class="ul_2_li_2">50% 底部对齐</li>
             <li class="ul_2_li_3">100可调节</li>
           </ul>
+          <div class="div_1">
+            <div class="left"></div>
+            <div class="center_1">
+              <p>信息</p>
+              <p>信息</p>
+              <p>信息</p>
+            </div>
+            <div class="center_2">
+              <p>信息</p>
+              <p>信息</p>
+              <p>信息</p>
+            </div>
+            <div class="right"></div>
+          </div>
         </div>
       </div>
       <div class="footer">footer</div>
