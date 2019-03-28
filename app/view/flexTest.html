@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      ul li {
+        list-style: none;
+      }
+      .wrap {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+      .header {
+        display: flex;
+        flex-basis: 150px;
+        background-color: palevioletred;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        flex-grow: 1;
+        flex-direction: row;
+        min-width: 0;
+      }
+      .footer {
+        display: flex;
+        flex-basis: 100px;
+        background-color: cadetblue;
+        justify-content: center;
+        align-items: center;
+      }
+      .menu {
+        flex-basis: 150px;
+        background-color: aquamarine;
+        font-size: 12px;
+        flex-shrink: 0; /*空间不足时不压缩 默认为1 压缩*/
+      }
+      .menu ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+      .content {
+        /* display: flex; */
+        flex: auto; /*flex: flex-grow flex-shrink flex-basis  1 1 auto 能放大能缩小宽度自动*/
+        background-color: orchid;
+        padding: 20px 10px;
+        width: 0; /*内容宽度超过父元素的宽度时，控制内容不会溢出*/
+        /* align-content: center; */
+      }
+      .ul_1,
+      .ul_2 {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        height: 200px;
+        background-color: coral;
+      }
+      .ul_1 {
+        flex-wrap: wrap;
+        align-content: flex-end;
+      }
+      .ul_1 li {
+        display: flex;
+        flex: 1;
+        border: 1px solid #000;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 1;
+      }
+      .ul_2 {
+        overflow: hidden;
+        align-items: center;
+      }
+      .ul_2 li {
+        display: flex;
+        border: 1px solid #000;
+        justify-content: center;
+        min-height: 50px;
+      }
+      .ul_2_li_1 {
+        order: 2;
+        flex-basis: 200px;
+        flex-shrink: 0;
+      }
+      .ul_2_li_2 {
+        display: flex;
+        order: 1;
+        flex: 1 0 50%;
+        align-self: flex-end;
+      }
+      .ul_2_li_3 {
+        order: 3;
+        flex-basis: 100px;
+        align-self: stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">header</div>
+      <div class="container">
+        <div class="menu">
+          <ul>
+            <li>菜单好多好多好多好多好多好多好多好多好多好多字</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+            <li>菜单4</li>
+            <li>菜单5</li>
+            <li>菜单好多好多好多好多好多好多好多好多好多好多字</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+            <li>菜单4</li>
+            <li>菜单5</li>
+          </ul>
+        </div>
+        <div class="content">
+          <ul class="ul_1">
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+            <li>1/3</li>
+          </ul>
+          <ul class="ul_2">
+            <li class="ul_2_li_1">200px 不能调节</li>
+            <li class="ul_2_li_2">50% 底部对齐</li>
+            <li class="ul_2_li_3">100可调节</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

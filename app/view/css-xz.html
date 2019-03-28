@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      #wrap > div {
+        margin-bottom: 20px;
+      }
+      .demo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #ff0000;
+      }
+      .demo2 {
+        width: 60px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #ff0000;
+      }
+      .demo3 {
+        width: 80px;
+        height: 50px;
+        transform: skew(-45deg);
+        background: #5588aa;
+        color: #fff;
+      }
+      .demo3 > div {
+        transform: skew(45deg);
+      }
+      .demo4 {
+        width: 80px;
+        height: 50px;
+        color: #fff;
+        position: relative;
+        text-align: center;
+      }
+      .demo4::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #58a;
+        transform: skew(-45deg);
+        z-index: -1;
+      }
+      .diamond {
+        margin: 30px auto;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        position: relative;
+        transform: rotate(45deg);
+        border: 1px solid red;
+      }
+      .diamond:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: rotate(-45deg) scale(1.42);
+        background: url(https://avatars1.githubusercontent.com/u/8121621?v=4);
+        background-size: cover;
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="demo"></div>
+      <div class="demo2"></div>
+      <div class="demo3">文字</div>
+      <div class="demo3"><div>文字</div></div>
+      <div class="demo4">文字</div>
+      <div class="diamond">
+        <img
+          src="https://avatars1.githubusercontent.com/u/8121621?v=4"
+          alt="..."
+          width="100px"
+        />
+      </div>
+    </div>
+  </body>
+</html>
