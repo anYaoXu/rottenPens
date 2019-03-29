@@ -141,6 +141,51 @@
         display: flex;
         flex-grow: 1;
       }
+      .div_2 {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        margin-top: 20px;
+      }
+      .div_2_item {
+        flex: 1;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        border: 1px solid white;
+        background-color: #ff0000;
+      }
+      .div_3 {
+        display: flex;
+        display: -webkit-flex;
+        margin-top: 20px;
+        flex-flow: row nowrap;
+      }
+      .div_3_left {
+        /* flex-basis: 200px;
+        flex-grow: 0;
+        flex-shrink: 0; */
+        background-color: chocolate;
+        flex: 0 0 200px;
+      }
+      .div_3_right {
+        flex-grow: 1;
+        /* overflow: hidden; */
+        width: 0; /*这里加overflow 和 width 防止宽度溢出*/
+      }
+      .div_3 .text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .div_4 {
+        width: 100%;
+        height: 400px;
+        overflow-y: auto;
+      }
+      .div_4_header {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -197,6 +242,32 @@
               <p>信息</p>
             </div>
             <div class="right"></div>
+          </div>
+          <div class="div_2">
+            <span class="div_2_item">元素</span>
+            <span class="div_2_item">元素</span>
+            <span class="div_2_item">元素</span>
+            <div class="div_2_item">元素</div>
+            <div class="div_2_item">元素</div>
+          </div>
+          <div class="div_3">
+            <div class="div_3_left">Hi</div>
+            <div class="div_3_right">
+              <div class="text">
+                一个flex-grow为1的元素的子级一个flex-grow为1的元素的子级一个flex-grow
+                为1的元素的子级一个flex-grow为1的元素的子级
+              </div>
+            </div>
+          </div>
+          <div class="div_4">
+            <div class="div_4_header">header</div>
+            <ul>
+              <li>协会简介</li>
+              <li>协会章程</li>
+              <li>组织架构</li>
+              <li>入会须知</li>
+            </ul>
+            <div class="div_4_content"></div>
           </div>
         </div>
       </div>
